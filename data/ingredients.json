@@ -1,0 +1,484 @@
+[
+ {
+  "id": "chk",
+  "en": "Chicken",
+  "hi": "चिकन",
+  "unit": "g",
+  "note": {
+   "en": "Boneless thigh or breast, curry cut",
+   "hi": "बोनलेस थाई या ब्रेस्ट, करी कट"
+  },
+  "sub": {
+   "en": "Paneer",
+   "hi": "पनीर"
+  }
+ },
+ {
+  "id": "btr",
+  "en": "Butter",
+  "hi": "मक्खन",
+  "unit": "g",
+  "household": {
+   "size": 14,
+   "unit": "tbsp"
+  },
+  "note": {
+   "en": "Salted or unsalted",
+   "hi": "नमकीन या बिना नमक वाला"
+  },
+  "sub": {
+   "en": "Ghee",
+   "hi": "घी"
+  }
+ },
+ {
+  "id": "crm",
+  "en": "Cream",
+  "hi": "क्रीम",
+  "unit": "ml",
+  "household": {
+   "size": 15,
+   "unit": "tbsp"
+  },
+  "sub": {
+   "en": "Cashew paste",
+   "hi": "काजू पेस्ट"
+  }
+ },
+ {
+  "id": "tom",
+  "en": "Tomato",
+  "hi": "टमाटर",
+  "unit": "g",
+  "household": {
+   "size": 100,
+   "unit": "pc"
+  }
+ },
+ {
+  "id": "oni",
+  "en": "Onion",
+  "hi": "प्याज़",
+  "unit": "g",
+  "household": {
+   "size": 100,
+   "unit": "pc"
+  },
+  "note": {
+   "en": "Red or yellow onion",
+   "hi": "लाल या पीला प्याज़"
+  }
+ },
+ {
+  "id": "gng",
+  "en": "Ginger-garlic",
+  "hi": "अदरक-लहसुन",
+  "unit": "g",
+  "household": {
+   "size": 5,
+   "unit": "tsp"
+  }
+ },
+ {
+  "id": "gm",
+  "en": "Garam masala",
+  "hi": "गरम मसाला",
+  "unit": "g",
+  "household": {
+   "size": 2.5,
+   "unit": "tsp"
+  },
+  "staple": true
+ },
+ {
+  "id": "oil",
+  "en": "Oil",
+  "hi": "तेल",
+  "unit": "ml",
+  "household": {
+   "size": 15,
+   "unit": "tbsp"
+  },
+  "note": {
+   "en": "Any cooking oil works: sunflower, groundnut, rice bran, refined or mustard",
+   "hi": "कोई भी खाने का तेल चलेगा: सनफ्लावर, मूंगफली, राइस ब्रान, रिफाइंड या सरसों"
+  },
+  "staple": true
+ },
+ {
+  "id": "slt",
+  "en": "Salt",
+  "hi": "नमक",
+  "unit": "g",
+  "household": {
+   "size": 6,
+   "unit": "tsp"
+  },
+  "note": {
+   "en": "Any salt works: iodised table salt, rock salt (sendha) or sea salt",
+   "hi": "कोई भी नमक चलेगा: आयोडीन नमक, सेंधा नमक या समुद्री नमक"
+  },
+  "staple": true
+ },
+ {
+  "id": "cur",
+  "en": "Curd",
+  "hi": "दही",
+  "unit": "g",
+  "household": {
+   "size": 150,
+   "unit": "katori"
+  },
+  "note": {
+   "en": "Plain fresh curd, not sour",
+   "hi": "सादा ताज़ा दही, खट्टा नहीं"
+  },
+  "sub": {
+   "en": "Buttermilk",
+   "hi": "छाछ"
+  }
+ },
+ {
+  "id": "kas",
+  "en": "Kasuri methi",
+  "hi": "कसूरी मेथी",
+  "unit": "g",
+  "household": {
+   "size": 1.5,
+   "unit": "tsp"
+  },
+  "sub": {
+   "en": "Skip it",
+   "hi": "छोड़ दें"
+  }
+ },
+ {
+  "id": "rce",
+  "en": "Rice",
+  "hi": "चावल",
+  "unit": "g",
+  "household": {
+   "size": 150,
+   "unit": "katori"
+  },
+  "note": {
+   "en": "Any raw rice: sona masoori, ponni or regular (idli rice also works for dosa)",
+   "hi": "कोई भी कच्चा चावल: सोना मसूरी, पोन्नी या सामान्य (डोसा के लिए इडली चावल भी)"
+  }
+ },
+ {
+  "id": "urd",
+  "en": "Urad dal",
+  "hi": "उड़द दाल",
+  "unit": "g",
+  "household": {
+   "size": 160,
+   "unit": "katori"
+  }
+ },
+ {
+  "id": "pot",
+  "en": "Potato",
+  "hi": "आलू",
+  "unit": "g",
+  "household": {
+   "size": 150,
+   "unit": "pc"
+  },
+  "note": {
+   "en": "Any all-purpose potato",
+   "hi": "कोई भी आम आलू"
+  }
+ },
+ {
+  "id": "mus",
+  "en": "Mustard seeds",
+  "hi": "राई",
+  "unit": "g",
+  "household": {
+   "size": 4,
+   "unit": "tsp"
+  },
+  "staple": true
+ },
+ {
+  "id": "cl",
+  "en": "Curry leaves",
+  "hi": "कढ़ी पत्ता",
+  "unit": "g",
+  "sub": {
+   "en": "Bay leaf",
+   "hi": "तेज पत्ता"
+  }
+ },
+ {
+  "id": "grn",
+  "en": "Green chilli",
+  "hi": "हरी मिर्च",
+  "unit": "g",
+  "household": {
+   "size": 5,
+   "unit": "pc"
+  }
+ },
+ {
+  "id": "cor",
+  "en": "Coriander",
+  "hi": "धनिया",
+  "unit": "g",
+  "household": {
+   "size": 3,
+   "unit": "tbsp"
+  },
+  "sub": {
+   "en": "Mint",
+   "hi": "पुदीना"
+  }
+ },
+ {
+  "id": "trm",
+  "en": "Turmeric",
+  "hi": "हल्दी",
+  "unit": "g",
+  "household": {
+   "size": 3,
+   "unit": "tsp"
+  },
+  "staple": true
+ },
+ {
+  "id": "tur",
+  "en": "Toor dal",
+  "hi": "तूर दाल",
+  "unit": "g",
+  "household": {
+   "size": 160,
+   "unit": "katori"
+  },
+  "note": {
+   "en": "Any toor (arhar) dal",
+   "hi": "कोई भी तूर (अरहर) दाल"
+  }
+ },
+ {
+  "id": "veg",
+  "en": "Mixed veg",
+  "hi": "मिक्स सब्ज़ी",
+  "unit": "g",
+  "household": {
+   "size": 100,
+   "unit": "katori"
+  }
+ },
+ {
+  "id": "tam",
+  "en": "Tamarind",
+  "hi": "इमली",
+  "unit": "g",
+  "household": {
+   "size": 15,
+   "unit": "tbsp"
+  },
+  "sub": {
+   "en": "Amchur",
+   "hi": "अमचूर"
+  }
+ },
+ {
+  "id": "bbp",
+  "en": "Bisi bele bath masala",
+  "hi": "बिसी बेले मसाला",
+  "unit": "g",
+  "household": {
+   "size": 2.5,
+   "unit": "tsp"
+  },
+  "sub": {
+   "en": "Sambar powder",
+   "hi": "सांभर पाउडर"
+  }
+ },
+ {
+  "id": "chn",
+  "en": "Chhole",
+  "hi": "छोले",
+  "unit": "g",
+  "household": {
+   "size": 160,
+   "unit": "katori"
+  }
+ },
+ {
+  "id": "mai",
+  "en": "Maida",
+  "hi": "मैदा",
+  "unit": "g",
+  "household": {
+   "size": 125,
+   "unit": "katori"
+  }
+ },
+ {
+  "id": "chm",
+  "en": "Chhole masala",
+  "hi": "छोले मसाला",
+  "unit": "g",
+  "household": {
+   "size": 2.5,
+   "unit": "tsp"
+  },
+  "sub": {
+   "en": "Garam masala",
+   "hi": "गरम मसाला"
+  }
+ },
+ {
+  "id": "bes",
+  "en": "Besan",
+  "hi": "बेसन",
+  "unit": "g",
+  "household": {
+   "size": 100,
+   "unit": "katori"
+  }
+ },
+ {
+  "id": "soo",
+  "en": "Sooji",
+  "hi": "सूजी",
+  "unit": "g",
+  "household": {
+   "size": 150,
+   "unit": "katori"
+  }
+ },
+ {
+  "id": "eno",
+  "en": "Eno sachet",
+  "hi": "इनो",
+  "unit": "pc",
+  "sub": {
+   "en": "Baking soda",
+   "hi": "बेकिंग सोडा"
+  }
+ },
+ {
+  "id": "lem",
+  "en": "Lemon",
+  "hi": "नींबू",
+  "unit": "pc"
+ },
+ {
+  "id": "raj",
+  "en": "Rajma",
+  "hi": "राजमा",
+  "unit": "g",
+  "household": {
+   "size": 160,
+   "unit": "katori"
+  }
+ },
+ {
+  "id": "bas",
+  "en": "Basmati rice",
+  "hi": "बासमती चावल",
+  "unit": "g",
+  "household": {
+   "size": 150,
+   "unit": "katori"
+  },
+  "note": {
+   "en": "Any long-grain basmati",
+   "hi": "कोई भी लंबे दाने वाला बासमती"
+  },
+  "sub": {
+   "en": "Rice",
+   "hi": "चावल"
+  }
+ },
+ {
+  "id": "poh",
+  "en": "Poha",
+  "hi": "पोहा",
+  "unit": "g",
+  "household": {
+   "size": 60,
+   "unit": "katori"
+  }
+ },
+ {
+  "id": "pnt",
+  "en": "Peanuts",
+  "hi": "मूंगफली",
+  "unit": "g",
+  "household": {
+   "size": 10,
+   "unit": "tbsp"
+  }
+ },
+ {
+  "id": "mng",
+  "en": "Moong dal",
+  "hi": "मूंग दाल",
+  "unit": "g",
+  "household": {
+   "size": 160,
+   "unit": "katori"
+  }
+ },
+ {
+  "id": "ghe",
+  "en": "Ghee",
+  "hi": "घी",
+  "unit": "g",
+  "household": {
+   "size": 14,
+   "unit": "tbsp"
+  }
+ },
+ {
+  "id": "jer",
+  "en": "Cumin seeds",
+  "hi": "जीरा",
+  "unit": "g",
+  "household": {
+   "size": 2,
+   "unit": "tsp"
+  },
+  "staple": true
+ },
+ {
+  "id": "csh",
+  "en": "Cashews",
+  "hi": "काजू",
+  "unit": "g"
+ },
+ {
+  "id": "cnt",
+  "en": "Coconut (grated)",
+  "hi": "नारियल (कसा हुआ)",
+  "unit": "g",
+  "household": {
+   "size": 6,
+   "unit": "tbsp"
+  }
+ },
+ {
+  "id": "drm",
+  "en": "Drumstick",
+  "hi": "सहजन",
+  "unit": "pc"
+ },
+ {
+  "id": "pmg",
+  "en": "Pomegranate",
+  "hi": "अनार",
+  "unit": "g"
+ },
+ {
+  "id": "nan",
+  "en": "Naan",
+  "hi": "नान",
+  "unit": "pc"
+ }
+]

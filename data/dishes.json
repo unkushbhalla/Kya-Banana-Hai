@@ -1,0 +1,564 @@
+[
+ {
+  "id": "bc",
+  "en": "Butter Chicken",
+  "hi": "बटर चिकन",
+  "minutes": 45,
+  "heavy": true,
+  "slots": "LD",
+  "prep": {
+   "en": "Marinate chicken 2 hrs",
+   "hi": "चिकन 2 घंटे मैरिनेट करें"
+  },
+  "image": "images/bc.webp",
+  "items": [
+   {
+    "id": "chk",
+    "qty": 200
+   },
+   {
+    "id": "tom",
+    "qty": 150
+   },
+   {
+    "id": "oni",
+    "qty": 80
+   },
+   {
+    "id": "gng",
+    "qty": 15
+   },
+   {
+    "id": "btr",
+    "qty": 20
+   },
+   {
+    "id": "crm",
+    "qty": 30,
+    "optional": true
+   },
+   {
+    "id": "gm",
+    "qty": 3
+   },
+   {
+    "id": "kas",
+    "qty": 2,
+    "optional": true
+   },
+   {
+    "id": "cur",
+    "qty": 40
+   },
+   {
+    "id": "oil",
+    "qty": 10
+   },
+   {
+    "id": "slt",
+    "qty": 4
+   },
+   {
+    "id": "cor",
+    "qty": 5,
+    "optional": true
+   },
+   {
+    "id": "nan",
+    "qty": 1,
+    "optional": true
+   }
+  ]
+ },
+ {
+  "id": "md",
+  "en": "Masala Dosa",
+  "hi": "मसाला डोसा",
+  "minutes": 40,
+  "heavy": false,
+  "slots": "BD",
+  "prep": {
+   "en": "Soak rice and dal 6 hrs, ferment batter 8 hrs",
+   "hi": "चावल-दाल 6 घंटे भिगोएँ, घोल 8 घंटे फर्मेंट करें"
+  },
+  "image": "images/md.webp",
+  "items": [
+   {
+    "id": "rce",
+    "qty": 80
+   },
+   {
+    "id": "urd",
+    "qty": 25
+   },
+   {
+    "id": "pot",
+    "qty": 150
+   },
+   {
+    "id": "oni",
+    "qty": 50
+   },
+   {
+    "id": "mus",
+    "qty": 2
+   },
+   {
+    "id": "cl",
+    "qty": 2,
+    "optional": true
+   },
+   {
+    "id": "grn",
+    "qty": 5
+   },
+   {
+    "id": "trm",
+    "qty": 1
+   },
+   {
+    "id": "oil",
+    "qty": 15
+   },
+   {
+    "id": "slt",
+    "qty": 3
+   },
+   {
+    "id": "cor",
+    "qty": 5,
+    "optional": true
+   },
+   {
+    "id": "cnt",
+    "qty": 20,
+    "optional": true
+   },
+   {
+    "id": "tur",
+    "qty": 25,
+    "optional": true
+   },
+   {
+    "id": "veg",
+    "qty": 50,
+    "optional": true
+   }
+  ],
+  "featured": 2
+ },
+ {
+  "id": "bb",
+  "en": "Bisi Bele Bath",
+  "hi": "बिसी बेले भात",
+  "minutes": 50,
+  "heavy": true,
+  "slots": "LD",
+  "prep": {
+   "en": "Soak tamarind 15 min",
+   "hi": "इमली 15 मिनट भिगोएँ"
+  },
+  "image": "images/bb.webp",
+  "items": [
+   {
+    "id": "rce",
+    "qty": 70
+   },
+   {
+    "id": "tur",
+    "qty": 40
+   },
+   {
+    "id": "veg",
+    "qty": 100
+   },
+   {
+    "id": "tam",
+    "qty": 8
+   },
+   {
+    "id": "bbp",
+    "qty": 12
+   },
+   {
+    "id": "oil",
+    "qty": 10
+   },
+   {
+    "id": "slt",
+    "qty": 3
+   },
+   {
+    "id": "cl",
+    "qty": 2,
+    "optional": true
+   },
+   {
+    "id": "csh",
+    "qty": 10,
+    "optional": true
+   },
+   {
+    "id": "ghe",
+    "qty": 8,
+    "optional": true
+   },
+   {
+    "id": "cor",
+    "qty": 5,
+    "optional": true
+   },
+   {
+    "id": "drm",
+    "qty": 1,
+    "optional": true
+   }
+  ],
+  "equipment": {
+   "en": "Pressure cooker",
+   "hi": "प्रेशर कुकर"
+  }
+ },
+ {
+  "id": "ch",
+  "en": "Chhole Bhature",
+  "hi": "छोले भटूरे",
+  "minutes": 60,
+  "heavy": true,
+  "slots": "BL",
+  "prep": {
+   "en": "Soak chhole overnight",
+   "hi": "छोले रात भर भिगोएँ"
+  },
+  "image": "images/ch.webp",
+  "items": [
+   {
+    "id": "chn",
+    "qty": 80
+   },
+   {
+    "id": "mai",
+    "qty": 80
+   },
+   {
+    "id": "cur",
+    "qty": 30
+   },
+   {
+    "id": "oni",
+    "qty": 60
+   },
+   {
+    "id": "tom",
+    "qty": 80
+   },
+   {
+    "id": "chm",
+    "qty": 8
+   },
+   {
+    "id": "gng",
+    "qty": 10
+   },
+   {
+    "id": "oil",
+    "qty": 40
+   },
+   {
+    "id": "slt",
+    "qty": 4
+   },
+   {
+    "id": "grn",
+    "qty": 5,
+    "optional": true
+   },
+   {
+    "id": "lem",
+    "qty": 0.5,
+    "optional": true
+   },
+   {
+    "id": "cor",
+    "qty": 5,
+    "optional": true
+   }
+  ],
+  "equipment": {
+   "en": "Pressure cooker",
+   "hi": "प्रेशर कुकर"
+  }
+ },
+ {
+  "id": "dh",
+  "en": "Dhokla",
+  "hi": "ढोकला",
+  "minutes": 35,
+  "heavy": false,
+  "slots": "B",
+  "prep": {
+   "en": "Rest the batter 20 min",
+   "hi": "घोल 20 मिनट रखें"
+  },
+  "image": "images/dh.webp",
+  "items": [
+   {
+    "id": "bes",
+    "qty": 80
+   },
+   {
+    "id": "soo",
+    "qty": 15,
+    "optional": true
+   },
+   {
+    "id": "cur",
+    "qty": 40
+   },
+   {
+    "id": "eno",
+    "qty": 1
+   },
+   {
+    "id": "lem",
+    "qty": 0.5
+   },
+   {
+    "id": "mus",
+    "qty": 2
+   },
+   {
+    "id": "grn",
+    "qty": 5
+   },
+   {
+    "id": "cl",
+    "qty": 2,
+    "optional": true
+   },
+   {
+    "id": "oil",
+    "qty": 10
+   },
+   {
+    "id": "slt",
+    "qty": 2
+   },
+   {
+    "id": "cor",
+    "qty": 5,
+    "optional": true
+   },
+   {
+    "id": "cnt",
+    "qty": 10,
+    "optional": true
+   }
+  ],
+  "equipment": {
+   "en": "Steamer or deep pot with stand",
+   "hi": "स्टीमर या स्टैंड वाला बर्तन"
+  }
+ },
+ {
+  "id": "rc",
+  "en": "Rajma Chawal",
+  "hi": "राजमा चावल",
+  "minutes": 55,
+  "heavy": true,
+  "slots": "LD",
+  "prep": {
+   "en": "Soak rajma overnight",
+   "hi": "राजमा रात भर भिगोएँ"
+  },
+  "image": "images/rc.webp",
+  "items": [
+   {
+    "id": "raj",
+    "qty": 70
+   },
+   {
+    "id": "bas",
+    "qty": 80
+   },
+   {
+    "id": "oni",
+    "qty": 70
+   },
+   {
+    "id": "tom",
+    "qty": 100
+   },
+   {
+    "id": "gng",
+    "qty": 12
+   },
+   {
+    "id": "gm",
+    "qty": 3
+   },
+   {
+    "id": "oil",
+    "qty": 12
+   },
+   {
+    "id": "slt",
+    "qty": 4
+   },
+   {
+    "id": "cor",
+    "qty": 5,
+    "optional": true
+   },
+   {
+    "id": "grn",
+    "qty": 5,
+    "optional": true
+   },
+   {
+    "id": "ghe",
+    "qty": 5,
+    "optional": true
+   }
+  ],
+  "equipment": {
+   "en": "Pressure cooker",
+   "hi": "प्रेशर कुकर"
+  },
+  "featured": 1
+ },
+ {
+  "id": "po",
+  "en": "Poha",
+  "hi": "पोहा",
+  "minutes": 20,
+  "heavy": false,
+  "slots": "B",
+  "prep": {
+   "en": "Rinse poha 2 min",
+   "hi": "पोहा 2 मिनट धोएँ"
+  },
+  "image": "images/po.webp",
+  "items": [
+   {
+    "id": "poh",
+    "qty": 60
+   },
+   {
+    "id": "oni",
+    "qty": 60
+   },
+   {
+    "id": "pot",
+    "qty": 80
+   },
+   {
+    "id": "pnt",
+    "qty": 15,
+    "optional": true
+   },
+   {
+    "id": "mus",
+    "qty": 2
+   },
+   {
+    "id": "cl",
+    "qty": 2,
+    "optional": true
+   },
+   {
+    "id": "grn",
+    "qty": 5
+   },
+   {
+    "id": "trm",
+    "qty": 1
+   },
+   {
+    "id": "lem",
+    "qty": 0.5
+   },
+   {
+    "id": "oil",
+    "qty": 10
+   },
+   {
+    "id": "slt",
+    "qty": 2
+   },
+   {
+    "id": "cor",
+    "qty": 5,
+    "optional": true
+   },
+   {
+    "id": "pmg",
+    "qty": 15,
+    "optional": true
+   }
+  ]
+ },
+ {
+  "id": "kh",
+  "en": "Dal Khichdi",
+  "hi": "दाल खिचड़ी",
+  "minutes": 30,
+  "heavy": false,
+  "slots": "LD",
+  "prep": {
+   "en": "Soak rice and dal 15 min",
+   "hi": "चावल-दाल 15 मिनट भिगोएँ"
+  },
+  "image": "images/kh.webp",
+  "items": [
+   {
+    "id": "rce",
+    "qty": 60
+   },
+   {
+    "id": "mng",
+    "qty": 40
+   },
+   {
+    "id": "ghe",
+    "qty": 10
+   },
+   {
+    "id": "jer",
+    "qty": 2
+   },
+   {
+    "id": "trm",
+    "qty": 1
+   },
+   {
+    "id": "gng",
+    "qty": 5
+   },
+   {
+    "id": "tom",
+    "qty": 50,
+    "optional": true
+   },
+   {
+    "id": "slt",
+    "qty": 3
+   },
+   {
+    "id": "cor",
+    "qty": 5,
+    "optional": true
+   },
+   {
+    "id": "grn",
+    "qty": 3,
+    "optional": true
+   }
+  ],
+  "equipment": {
+   "en": "Pressure cooker",
+   "hi": "प्रेशर कुकर"
+  },
+  "featured": 3
+ }
+]
