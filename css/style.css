@@ -28,3 +28,9 @@ input[type=text]{width:100%;box-sizing:border-box;font:inherit;padding:14px;bord
 table{width:100%;border-collapse:collapse;font-size:13px}td,th{padding:4px;text-align:right;border-bottom:1px solid var(--br)}td:first-child,th:first-child{text-align:left}
 .sh{position:fixed;inset:0;background:#0007;z-index:20;display:flex;align-items:flex-end}.sh div{background:var(--bg);width:100%;max-width:480px;margin:0 auto;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));border-radius:18px 18px 0 0;display:grid;gap:8px}.sh button{padding:13px}
 @media print{body *{visibility:hidden}#pr,#pr *{visibility:visible}#pr{position:absolute;left:0;top:0;width:100%;color:#000}.tot{background:none;color:#000;border:1px solid #000}.tot button{display:none}.rw{border-color:#000;background:#fff}}
+
+/* screen 4 sections: fresh stands out, cabinet is quieter */
+.sec{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:19px;margin:18px 0 2px}
+.sec.cab{font-size:13px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--mu);margin-top:26px}
+.cabs{margin-top:4px}.rw.cb{background:transparent;border:0;border-bottom:1px solid var(--br);border-radius:0;padding:3px 2px;margin:0;font-size:13px;gap:8px}.rw.cb b{font-weight:600}
+.cw{margin-top:3px}.cw summary{cursor:pointer;font-size:12px;font-weight:600;color:var(--pr);list-style:none}.cw summary::before{content:"\26A0\FE0E  "}.cw div{font-size:12.5px;line-height:1.35;margin-top:3px}.cw .fx{color:var(--mu)}
