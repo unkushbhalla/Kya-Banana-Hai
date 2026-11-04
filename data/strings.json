@@ -212,8 +212,8 @@
   "प्रिंट नहीं हुआ। कॉपी करें।"
  ],
  "top": [
-  "Daily Smart Cooking",
-  "रोज़ की स्मार्ट रसोई"
+  "Kya Banana Hai",
+  "क्या बनाना है"
  ],
  "ps": [
   "Per serve<br>what one meal really costs you",
@@ -286,5 +286,25 @@
  "estp": [
   "Estimated prices.",
   "अनुमानित कीमतें।"
+ ],
+ "fresh": [
+  "Fresh ingredients",
+  "ताज़ी सामग्री"
+ ],
+ "cab": [
+  "From your cabinet",
+  "आपकी रसोई की अलमारी से"
+ ],
+ "cabn": [
+  "Dry goods, spices and oils you may already have.",
+  "सूखा सामान, मसाले और तेल जो शायद घर में हों।"
+ ],
+ "care": [
+  "Watch out",
+  "ध्यान रखें"
+ ],
+ "fixl": [
+  "Quick fix",
+  "झटपट उपाय"
  ]
 }
