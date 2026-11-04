@@ -1,8 +1,8 @@
-/* Daily Smart Cooking. Plain JavaScript, no build step.
+/* Kya Banana Hai. Plain JavaScript, no build step.
    Data lives in /data/*.json (prices.json is the weekly-edit file). */
 'use strict';
 
-let I = {}, D = [], HH = {}, SX = {}, U = {}, STP = [], VD = [], IMG = {}, PD = '';
+let I = {}, D = [], HH = {}, SX = {}, CR = {}, GP = {}, U = {}, STP = [], VD = [], IMG = {}, PD = '';
 const HU = { pc: ['pc', 'नग'], tsp: ['tsp', 'छोटा चम्मच'], tbsp: ['tbsp', 'बड़ा चम्मच'], katori: ['katori (bowl)', 'कटोरी'] };
 let S = { s: 0, n: '', l: 'en', mu: 0, m: {}, dy: {}, nd: {}, ms: {}, us: {}, hm: {}, qc: 1, sheet: 0, msg: '', mo: 0, ed: {}, pf: 0, cx: {} };
 try { Object.assign(S, JSON.parse(localStorage.getItem('p2c'))); } catch (e) {}
@@ -99,9 +99,11 @@ function AC() {
   S.cx[id] = e; I[id] = e; S.nd[id] = q; S.ms[id] = 1; R();
 }
 const tgl = () => `<label class=rw style="cursor:pointer"><input type=checkbox ${S.mo ? 'checked' : ''} onchange="S.mo=this.checked;R()" style="width:22px;height:22px;flex:none"><span><b>${t('mo')}</b><div class=nt>${t('mo2')}</div></span></label>`;
+/* caution + quick fix, shown only for ingredients that have one */
+const cw = k => CR[k] ? `<details class=cw><summary>${t('care')}</summary><div>${CR[k][hi() ? 1 : 0]}</div><div class=fx><b>${t('fixl')}:</b> ${CR[k][hi() ? 3 : 2]}</div></details>` : '';
 function GR() {
   const ks = items().sort((a, b) => (S.ms[b] ? 1 : 0) - (S.ms[a] ? 1 : 0)), rest = Object.keys(I).filter(k => !S.nd[k]);
-  return `<h2>${t('gro')}</h2>${tgl()}${ks.map(k => `<div class=rw><div class=fl><b>${nm(I[k])}</b><div><span class="tag ${S.ms[k] ? 'mu' : 'gd2'}">${t(S.ms[k] ? 'must' : 'good')}</span>${(S.us[k] || []).length > 1 ? ` <span class=nt>${t('used')} ${S.us[k].length}</span>` : ''}</div>${sx(k)}</div><div style="text-align:right"><div>${hz(k, S.nd[k])[0]}</div><div class=nt>${hz(k, S.nd[k])[1]}</div></div></div>`).join('')}${rest.length ? `<div class=rw><select id=ad style="flex:1;font:inherit;padding:8px">${rest.map(k => `<option value=${k}>${nm(I[k])}</option>`).join('')}</select><button onclick="AD()">+ ${t('pick')}</button></div>` : ''}<div class=rw style="flex-wrap:wrap;gap:6px"><div class=nt style="width:100%">${t('own')}</div><input type=text id=cn placeholder="${t('iname')}" style="width:100%;margin:0;padding:10px"><input type=number id=cq min=1 placeholder="${t('qty')}" class=ni><select id=cu class=ni><option>g<option>ml<option>pc</select><input type=number id=cp min=0 placeholder="${t('pri')}" class=ni style="width:110px"><button onclick="AC()">+ ${t('add')}</button></div><button class=pb onclick="G(3)">${t('adj')}</button>`;
+  return `<h2>${t('gro')}</h2>${tgl()}${ks.map(k => `<div class=rw><div class=fl><b>${nm(I[k])}</b><div><span class="tag ${S.ms[k] ? 'mu' : 'gd2'}">${t(S.ms[k] ? 'must' : 'good')}</span>${(S.us[k] || []).length > 1 ? ` <span class=nt>${t('used')} ${S.us[k].length}</span>` : ''}</div>${sx(k)}${cw(k)}</div><div style="text-align:right"><div>${hz(k, S.nd[k])[0]}</div><div class=nt>${hz(k, S.nd[k])[1]}</div></div></div>`).join('')}${rest.length ? `<div class=rw><select id=ad style="flex:1;font:inherit;padding:8px">${rest.map(k => `<option value=${k}>${nm(I[k])}</option>`).join('')}</select><button onclick="AD()">+ ${t('pick')}</button></div>` : ''}<div class=rw style="flex-wrap:wrap;gap:6px"><div class=nt style="width:100%">${t('own')}</div><input type=text id=cn placeholder="${t('iname')}" style="width:100%;margin:0;padding:10px"><input type=number id=cq min=1 placeholder="${t('qty')}" class=ni><select id=cu class=ni><option>g<option>ml<option>pc</select><input type=number id=cp min=0 placeholder="${t('pri')}" class=ni style="width:110px"><button onclick="AC()">+ ${t('add')}</button></div><button class=pb onclick="G(3)">${t('adj')}</button>`;
 }
 
 /* ---------- screen 4: what is at home ---------- */
@@ -110,10 +112,12 @@ function ED(k) { S.ed = S.ed || {}; S.ed[k] = !S.ed[k]; R(); }
 function HS(k, d) { S.hm[k] = Math.min(S.nd[k], Math.max(0, Math.round(((S.hm[k] || 0) + d * ss(k)) * 10) / 10)); R(); }
 function HM() {
   const ks = items().sort((a, b) => (bu(a) == 0) - (bu(b) == 0)); S.ed = S.ed || {};
-  return `<h2>${t('home')}</h2>${S.pf ? `<div class=pn>${t('pre')}</div>` : ''}${ks.map(k => {
-    const q = hz(k, S.nd[k]), e = S.ed[k], h = S.hm[k] || 0, hq = hz(k, h);
-    return `<div class="rw ${bu(k) ? '' : 'off'}"><input type=checkbox id=c_${k} ${bu(k) == 0 ? 'checked' : ''} onchange="HC('${k}',this.checked)" style="width:22px;height:22px;flex:none"><label for=c_${k} class=fl style="cursor:pointer"><b>${nm(I[k])}</b>${sx(k)}${!e && h > 0 && bu(k) > 0 ? `<div class=nt>${t('ah')}: ${hq[0]}</div>` : ''}</label>${e ? `<div style="text-align:right"><div class=nt>${t('need')}: ${q[0]}</div><div class=ct style="margin:4px 0;justify-content:flex-end"><button onclick="HS('${k}',-1)">−</button><span style="min-width:70px;text-align:center">${hq[0]}</span><button onclick="HS('${k}',1)">+</button></div><button class=lk onclick="ED('${k}')">${t('dn')}</button></div>` : `<div style="text-align:right"><div>${q[0]}</div><div class=nt>${q[1]}</div><button class=lk style="font-size:13px" onclick="ED('${k}')">${t('ed')}</button></div>`}</div>`;
-  }).join('')}<div class=st style="position:static;margin:12px 0">${t('nb')}: ${buyList().length} / ${ks.length}</div><button class=pb onclick="G(4)">${t('fin')}</button>`;
+  const row = (k, cb) => {
+    const q = hz(k, S.nd[k]), e = S.ed[k], h = S.hm[k] || 0, hq = hz(k, h), sz = cb ? 18 : 22;
+    return `<div class="rw ${bu(k) ? '' : 'off'} ${cb ? 'cb' : ''}"><input type=checkbox id=c_${k} ${bu(k) == 0 ? 'checked' : ''} onchange="HC('${k}',this.checked)" style="width:${sz}px;height:${sz}px;flex:none"><div class=fl><label for=c_${k} style="cursor:pointer;display:block"><b>${nm(I[k])}</b>${sx(k)}${!e && h > 0 && bu(k) > 0 ? `<div class=nt>${t('ah')}: ${hq[0]}</div>` : ''}</label>${cw(k)}</div>${e ? `<div style="text-align:right"><div class=nt>${t('need')}: ${q[0]}</div><div class=ct style="margin:4px 0;justify-content:flex-end"><button onclick="HS('${k}',-1)">−</button><span style="min-width:70px;text-align:center">${hq[0]}</span><button onclick="HS('${k}',1)">+</button></div><button class=lk onclick="ED('${k}')">${t('dn')}</button></div>` : `<div style="text-align:right"><div>${q[0]}</div><div class=nt>${q[1]}</div><button class=lk style="font-size:13px" onclick="ED('${k}')">${t('ed')}</button></div>`}</div>`;
+  };
+  const fz = ks.filter(k => GP[k] != 'cabinet'), cb = ks.filter(k => GP[k] == 'cabinet');
+  return `<h2>${t('home')}</h2>${S.pf ? `<div class=pn>${t('pre')}</div>` : ''}${fz.length ? `<h3 class=sec>${t('fresh')}</h3>${fz.map(k => row(k, 0)).join('')}` : ''}${cb.length ? `<h3 class="sec cab">${t('cab')}</h3><div class=nt>${t('cabn')}</div><div class=cabs>${cb.map(k => row(k, 1)).join('')}</div>` : ''}<div class=st style="position:static;margin:12px 0">${t('nb')}: ${buyList().length} / ${ks.length}</div><button class=pb onclick="G(4)">${t('fin')}</button>`;
 }
 
 /* ---------- screen 5: shopping list ---------- */
@@ -174,6 +178,8 @@ async function boot() {
       if (x.household) HH[x.id] = [x.household.size, x.household.unit];
       if (x.note) SX[x.id] = [x.note.en, x.note.hi];
       if (x.staple) STP.push(x.id);
+      GP[x.id] = x.group || 'fresh';
+      if (x.care) CR[x.id] = [x.care.caution.en, x.care.caution.hi, x.care.fix.en, x.care.fix.hi];
     }
     D = dsh.map(d => ({ id: d.id, n: [d.en, d.hi], m: d.minutes, w: d.heavy ? 1 : 0, t: d.slots, p: [d.prep.en, d.prep.hi], k: d.equipment ? [d.equipment.en, d.equipment.hi] : ['', ''], items: d.items }));
     dsh.forEach(d => { IMG[d.id] = d.image; });
