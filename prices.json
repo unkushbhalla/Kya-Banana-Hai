@@ -1,0 +1,342 @@
+{
+ "updated": "26-10-2026",
+ "note": "Edit this file weekly. pack = pack size in the ingredient unit; qc = Zepto/Blinkit/Swiggy price for that pack (most-reviewed brand); kirana = kirana shop price for the same pack. *Checked = false means the number is an estimate, not a looked-up price.",
+ "prices": {
+  "chk": {
+   "pack": 500,
+   "qc": 199,
+   "kirana": 199,
+   "brand": "Godrej Real",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "btr": {
+   "pack": 100,
+   "qc": 64,
+   "kirana": 64,
+   "brand": "Amul Salted",
+   "qcChecked": true,
+   "kiranaChecked": true
+  },
+  "crm": {
+   "pack": 250,
+   "qc": 75,
+   "kirana": 74,
+   "brand": "Amul",
+   "qcChecked": true,
+   "kiranaChecked": true
+  },
+  "tom": {
+   "pack": 500,
+   "qc": 30,
+   "kirana": 30,
+   "brand": "Local",
+   "qcChecked": true,
+   "kiranaChecked": true
+  },
+  "oni": {
+   "pack": 500,
+   "qc": 34,
+   "kirana": 28,
+   "brand": "",
+   "qcChecked": true,
+   "kiranaChecked": true
+  },
+  "gng": {
+   "pack": 200,
+   "qc": 36,
+   "kirana": 36,
+   "brand": "Catch",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "gm": {
+   "pack": 100,
+   "qc": 99,
+   "kirana": 99,
+   "brand": "Catch",
+   "qcChecked": true,
+   "kiranaChecked": true
+  },
+  "oil": {
+   "pack": 1000,
+   "qc": 185,
+   "kirana": 185,
+   "brand": "Fortune Soya Health Refined",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "slt": {
+   "pack": 1000,
+   "qc": 30,
+   "kirana": 31,
+   "brand": "Tata",
+   "qcChecked": true,
+   "kiranaChecked": true
+  },
+  "cur": {
+   "pack": 380,
+   "qc": 35,
+   "kirana": 35,
+   "brand": "Mother Dairy Classic",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "kas": {
+   "pack": 25,
+   "qc": 11,
+   "kirana": 15,
+   "brand": "ZOFF",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "rce": {
+   "pack": 1000,
+   "qc": 98,
+   "kirana": 98,
+   "brand": "Daawat Rozana",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "urd": {
+   "pack": 500,
+   "qc": 89,
+   "kirana": 85,
+   "brand": "Daily Good",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "pot": {
+   "pack": 1000,
+   "qc": 22,
+   "kirana": 22,
+   "brand": "Local",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "mus": {
+   "pack": 200,
+   "qc": 40,
+   "kirana": 40,
+   "brand": "Daily Good",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "cl": {
+   "pack": 60,
+   "qc": 18,
+   "kirana": 18,
+   "brand": "Cleaned, without roots",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "grn": {
+   "pack": 100,
+   "qc": 25,
+   "kirana": 10,
+   "brand": "No brand",
+   "qcChecked": true,
+   "kiranaChecked": true
+  },
+  "cor": {
+   "pack": 100,
+   "qc": 23,
+   "kirana": 23,
+   "brand": "Organically grown",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "trm": {
+   "pack": 100,
+   "qc": 36,
+   "kirana": 36,
+   "brand": "Catch",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "tur": {
+   "pack": 1000,
+   "qc": 174,
+   "kirana": 174,
+   "brand": "Tata Sampann",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "veg": {
+   "pack": 500,
+   "qc": 77,
+   "kirana": 76,
+   "brand": "Safar Frozen",
+   "qcChecked": true,
+   "kiranaChecked": true
+  },
+  "tam": {
+   "pack": 200,
+   "qc": 66,
+   "kirana": 60,
+   "brand": "Daily Good",
+   "qcChecked": true,
+   "kiranaChecked": true
+  },
+  "bbp": {
+   "pack": 100,
+   "qc": 89,
+   "kirana": 89,
+   "brand": "MTR",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "chn": {
+   "pack": 500,
+   "qc": 72,
+   "kirana": 72,
+   "brand": "Rajdhani Unpolished",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "mai": {
+   "pack": 500,
+   "qc": 27,
+   "kirana": 27,
+   "brand": "Daily Good",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "chm": {
+   "pack": 50,
+   "qc": 51,
+   "kirana": 51,
+   "brand": "Everest",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "bes": {
+   "pack": 500,
+   "qc": 50,
+   "kirana": 52,
+   "brand": "Rajdhani",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "soo": {
+   "pack": 500,
+   "qc": 40,
+   "kirana": 35,
+   "brand": "Fortune",
+   "qcChecked": true,
+   "kiranaChecked": true
+  },
+  "eno": {
+   "pack": 6,
+   "qc": 60,
+   "kirana": 58,
+   "brand": "ENO",
+   "qcChecked": true,
+   "kiranaChecked": true
+  },
+  "lem": {
+   "pack": 5,
+   "qc": 59,
+   "kirana": 50,
+   "brand": "Local",
+   "qcChecked": true,
+   "kiranaChecked": true
+  },
+  "raj": {
+   "pack": 500,
+   "qc": 97,
+   "kirana": 96,
+   "brand": "Tata Sampann Red Rajma",
+   "qcChecked": true,
+   "kiranaChecked": true
+  },
+  "bas": {
+   "pack": 1000,
+   "qc": 105,
+   "kirana": 80,
+   "brand": "Fortune Rozana Gold",
+   "qcChecked": true,
+   "kiranaChecked": true
+  },
+  "poh": {
+   "pack": 500,
+   "qc": 42,
+   "kirana": 40,
+   "brand": "Daily Good",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "pnt": {
+   "pack": 500,
+   "qc": 105,
+   "kirana": 85,
+   "brand": "Daily Good",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "mng": {
+   "pack": 500,
+   "qc": 80,
+   "kirana": 80,
+   "brand": "Daily Good Unpolished",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "ghe": {
+   "pack": 180,
+   "qc": 185,
+   "kirana": 185,
+   "brand": "Aashirwad cow ghee",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "jer": {
+   "pack": 100,
+   "qc": 58,
+   "kirana": 45,
+   "brand": "Catch",
+   "qcChecked": true,
+   "kiranaChecked": true
+  },
+  "csh": {
+   "pack": 100,
+   "qc": 118,
+   "kirana": 118,
+   "brand": "Daily Good",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "cnt": {
+   "pack": 100,
+   "qc": 60,
+   "kirana": 49,
+   "brand": "Local",
+   "qcChecked": true,
+   "kiranaChecked": true
+  },
+  "drm": {
+   "pack": 3,
+   "qc": 40,
+   "kirana": 40,
+   "brand": "-",
+   "qcChecked": false,
+   "kiranaChecked": true
+  },
+  "pmg": {
+   "pack": 500,
+   "qc": 120,
+   "kirana": 120,
+   "brand": "Economy",
+   "qcChecked": true,
+   "kiranaChecked": false
+  },
+  "nan": {
+   "pack": 2,
+   "qc": 50,
+   "kirana": 45,
+   "brand": "-",
+   "qcChecked": false,
+   "kiranaChecked": false
+  }
+ }
+}

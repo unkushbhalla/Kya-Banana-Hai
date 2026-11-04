@@ -1,0 +1,310 @@
+{
+ "lis": [
+  "Listen",
+  "सुनें"
+ ],
+ "eqp": [
+  "Equipment:",
+  "उपकरण:"
+ ],
+ "tag": [
+  "Pick your meals. We’ll tell you exactly what to buy, and what you already have.",
+  "अपना खाना चुनिए। हम बताएँगे क्या ख़रीदना है, और घर में क्या पहले से है।"
+ ],
+ "nm": [
+  "Your name",
+  "आपका नाम"
+ ],
+ "go": [
+  "Continue",
+  "आगे बढ़ें"
+ ],
+ "dm": [
+  "Try demo",
+  "डेमो आज़माएँ"
+ ],
+ "hi": [
+  "Hi",
+  "नमस्ते"
+ ],
+ "one": [
+  "One meal",
+  "एक भोजन"
+ ],
+ "mul": [
+  "Up to 6 meals (2 days)",
+  "6 भोजन तक (2 दिन)"
+ ],
+ "of": [
+  "meals planned (max 6)",
+  "भोजन चुने (अधिकतम 6)"
+ ],
+ "min": [
+  "min",
+  "मिनट"
+ ],
+ "srv": [
+  "serve",
+  "थाली"
+ ],
+ "hv": [
+  "Heavy",
+  "भारी"
+ ],
+ "lt": [
+  "Light",
+  "हल्का"
+ ],
+ "B": [
+  "Breakfast",
+  "नाश्ता"
+ ],
+ "L": [
+  "Lunch",
+  "दोपहर"
+ ],
+ "D": [
+  "Dinner",
+  "रात"
+ ],
+ "d": [
+  "Day",
+  "दिन"
+ ],
+ "find": [
+  "Get my grocery list",
+  "मेरी किराना सूची दिखाएँ"
+ ],
+ "gro": [
+  "Your groceries",
+  "आपका किराना"
+ ],
+ "must": [
+  "Must have",
+  "ज़रूरी"
+ ],
+ "good": [
+  "Good to have",
+  "अच्छा हो"
+ ],
+ "used": [
+  "used in meals:",
+  "भोजनों में:"
+ ],
+ "add": [
+  "Add item",
+  "सामान जोड़ें"
+ ],
+ "adj": [
+  "Check what I already have",
+  "जो घर में है, वह जाँचें"
+ ],
+ "home": [
+  "Tick what you already have",
+  "जो पहले से घर में है, उस पर टिक करें"
+ ],
+ "nb": [
+  "Need to buy",
+  "ख़रीदना है"
+ ],
+ "need": [
+  "need",
+  "चाहिए"
+ ],
+ "fin": [
+  "Show my shopping list",
+  "मेरी ख़रीदारी सूची दिखाएँ"
+ ],
+ "lst": [
+  "Your shopping list",
+  "आपकी ख़रीदारी सूची"
+ ],
+ "tot": [
+  "Total",
+  "कुल"
+ ],
+ "qc": [
+  "Zepto / Blinkit / Swiggy",
+  "ज़ेप्टो / ब्लिंकिट / स्विगी"
+ ],
+ "ki": [
+  "Kirana shops",
+  "किराना दुकानें"
+ ],
+ "sv": [
+  "You saved<br>by using what’s at home",
+  "आपकी बचत<br>घर का सामान इस्तेमाल करके"
+ ],
+ "br": [
+  "Item-wise breakdown",
+  "आइटम-वार हिसाब"
+ ],
+ "sub": [
+  "Substitute",
+  "विकल्प"
+ ],
+ "sh": [
+  "Share or print list",
+  "सूची भेजें या प्रिंट करें"
+ ],
+ "pa": [
+  "Plan another meal",
+  "दूसरा भोजन चुनें"
+ ],
+ "bk": [
+  "Back",
+  "पीछे"
+ ],
+ "pr": [
+  "Print",
+  "प्रिंट"
+ ],
+ "cp": [
+  "Copy",
+  "कॉपी"
+ ],
+ "wa": [
+  "WhatsApp",
+  "व्हाट्सऐप"
+ ],
+ "em": [
+  "Nothing to buy. You have it all at home!",
+  "कुछ ख़रीदना नहीं है। सब घर में है!"
+ ],
+ "ok": [
+  "Copied",
+  "कॉपी हो गया"
+ ],
+ "buy": [
+  "Buy",
+  "ख़रीदें"
+ ],
+ "h1": [
+  "Hungry now, or planning ahead?",
+  "अभी भूख लगी है, या आगे की तैयारी?"
+ ],
+ "pick": [
+  "Add from list",
+  "सूची से जोड़ें"
+ ],
+ "own": [
+  "Or type your own item",
+  "या अपना सामान लिखें"
+ ],
+ "iname": [
+  "Item name",
+  "सामान का नाम"
+ ],
+ "qty": [
+  "Qty",
+  "मात्रा"
+ ],
+ "pri": [
+  "₹ (optional)",
+  "₹ (वैकल्पिक)"
+ ],
+ "est2": [
+  "Packs shown are the small packs most people buy, so you may buy more than you need. Kirana brands may differ.",
+  "दिखाए गए पैक वे छोटे पैक हैं जो ज़्यादातर लोग लेते हैं, इसलिए ज़रूरत से ज़्यादा आ सकता है। किराना में ब्रांड अलग हो सकता है।"
+ ],
+ "pf": [
+  "Print blocked. Use Copy.",
+  "प्रिंट नहीं हुआ। कॉपी करें।"
+ ],
+ "top": [
+  "Kya Banana Hai",
+  "क्या बनाना है"
+ ],
+ "ps": [
+  "Per serve<br>what one meal really costs you",
+  "प्रति थाली<br>एक भोजन का असली ख़र्च"
+ ],
+ "lo": [
+  "Left over<br>unused packs, for later",
+  "बचा हुआ<br>बिना इस्तेमाल पैक, आगे के लिए"
+ ],
+ "cmp": [
+  "Compare prices",
+  "कीमतों की तुलना करें"
+ ],
+ "mo": [
+  "Must-haves only",
+  "सिर्फ़ ज़रूरी सामान"
+ ],
+ "mo2": [
+  "Keep it simple: skip garnishes and extras",
+  "सरल रखें: सजावट और अतिरिक्त चीज़ें छोड़ें"
+ ],
+ "vh": [
+  "Cook a full plate for just",
+  "एक पूरी थाली सिर्फ़"
+ ],
+ "vp": [
+  "plate of",
+  "थाली"
+ ],
+ "vf": [
+  "What goes into the price<br>• Must-have ingredients only, no garnishes or extras<br>• Salt, oil, turmeric, garam masala, mustard and cumin assumed at home<br>• Kirana prices. You buy whole packs, which last several plates.",
+  "कीमत में क्या शामिल है<br>• सिर्फ़ ज़रूरी सामग्री, सजावट या अतिरिक्त चीज़ें नहीं<br>• नमक, तेल, हल्दी, गरम मसाला, राई और जीरा घर में मान लिए गए हैं<br>• किराना दाम। आप पूरे पैक ख़रीदते हैं, जो कई थालियों तक चलते हैं।"
+ ],
+ "ns": [
+  "Get started: what’s your name?",
+  "शुरू करें: आपका नाम क्या है?"
+ ],
+ "pre": [
+  "We’ve ticked common kitchen staples (salt, oil, turmeric, garam masala, mustard, cumin). Untick any you’re out of.",
+  "हमने आम रसोई के सामान (नमक, तेल, हल्दी, गरम मसाला, राई, जीरा) पर टिक कर दिया है। जो न हो उसका टिक हटा दें।"
+ ],
+ "lp": [
+  "Your last plan",
+  "आपकी पिछली योजना"
+ ],
+ "lpu": [
+  "Use again",
+  "फिर से चुनें"
+ ],
+ "ed": [
+  "Edit",
+  "बदलें"
+ ],
+ "dn": [
+  "Done",
+  "हो गया"
+ ],
+ "ah": [
+  "At home",
+  "घर में"
+ ],
+ "prp": [
+  "Prep:",
+  "तैयारी:"
+ ],
+ "upd": [
+  "Prices updated on {d}.",
+  "कीमतें {d} को अपडेट की गईं।"
+ ],
+ "estp": [
+  "Estimated prices.",
+  "अनुमानित कीमतें।"
+ ],
+ "fresh": [
+  "Fresh ingredients",
+  "ताज़ी सामग्री"
+ ],
+ "cab": [
+  "From your cabinet",
+  "आपकी रसोई की अलमारी से"
+ ],
+ "cabn": [
+  "Dry goods, spices and oils you may already have.",
+  "सूखा सामान, मसाले और तेल जो शायद घर में हों।"
+ ],
+ "care": [
+  "Watch out",
+  "ध्यान रखें"
+ ],
+ "fixl": [
+  "Quick fix",
+  "झटपट उपाय"
+ ]
+}
