@@ -1,4 +1,4 @@
-# Daily Smart Cooking
+# Kya Banana Hai
 
 Pick a meal. Shop only what you need.
 
@@ -70,3 +70,7 @@ Pack size and price must be for the same pack. If you change a pack from 500 g t
 ## Out of scope
 
 Recipe method, live prices, ordering or checkout, accounts and sync, nutrition filters, custom dishes, languages other than English and Hindi.
+
+## Ingredient groups and cautions
+
+Each ingredient in `data/ingredients.json` has a `group` (`fresh` or `cabinet`). Screen 4 shows fresh items first and full size, and cabinet items below in a quieter, compact list. An ingredient can also have a `care` block with a `caution` and a `fix` (English and Hindi). It shows as a "Watch out" line on screens 3 and 4 and is left out when an ingredient has none.
