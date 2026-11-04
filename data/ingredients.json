@@ -11,6 +11,17 @@
   "sub": {
    "en": "Paneer",
    "hi": "पनीर"
+  },
+  "group": "fresh",
+  "care": {
+   "caution": {
+    "en": "Overcooked chicken turns dry and tough.",
+    "hi": "ज़्यादा पकाने पर चिकन सूखा और सख़्त हो जाता है।"
+   },
+   "fix": {
+    "en": "Add a splash of hot water or cream to the gravy, cover and rest 5 minutes.",
+    "hi": "ग्रेवी में थोड़ा गरम पानी या क्रीम डालें, ढककर 5 मिनट रखें।"
+   }
   }
  },
  {
@@ -29,6 +40,17 @@
   "sub": {
    "en": "Ghee",
    "hi": "घी"
+  },
+  "group": "fresh",
+  "care": {
+   "caution": {
+    "en": "Burns quickly on high heat and turns bitter.",
+    "hi": "तेज़ आँच पर जल्दी जलता है और कड़वा हो जाता है।"
+   },
+   "fix": {
+    "en": "Lower the heat and add a spoon of water; start again if it is black.",
+    "hi": "आँच कम करें और एक चम्मच पानी डालें; काला हो जाए तो दोबारा शुरू करें।"
+   }
   }
  },
  {
@@ -43,6 +65,17 @@
   "sub": {
    "en": "Cashew paste",
    "hi": "काजू पेस्ट"
+  },
+  "group": "fresh",
+  "care": {
+   "caution": {
+    "en": "Can split if boiled hard or added to a very sour gravy.",
+    "hi": "तेज़ उबाल या बहुत खट्टी ग्रेवी में डालने पर फट सकती है।"
+   },
+   "fix": {
+    "en": "Add it last on low heat. If it splits, whisk in a spoon of cold milk.",
+    "hi": "आख़िर में धीमी आँच पर डालें। फट जाए तो एक चम्मच ठंडा दूध फेंटकर मिलाएँ।"
+   }
   }
  },
  {
@@ -53,6 +86,17 @@
   "household": {
    "size": 100,
    "unit": "pc"
+  },
+  "group": "fresh",
+  "care": {
+   "caution": {
+    "en": "Very sour or watery tomatoes make the gravy tangy and thin.",
+    "hi": "बहुत खट्टे या पानी वाले टमाटर ग्रेवी को खट्टी और पतली कर देते हैं।"
+   },
+   "fix": {
+    "en": "Cook until oil separates and add a pinch of sugar.",
+    "hi": "तेल अलग होने तक पकाएँ और एक चुटकी चीनी डालें।"
+   }
   }
  },
  {
@@ -67,6 +111,17 @@
   "note": {
    "en": "Red or yellow onion",
    "hi": "लाल या पीला प्याज़"
+  },
+  "group": "fresh",
+  "care": {
+   "caution": {
+    "en": "Burnt onion turns the whole dish bitter.",
+    "hi": "जला हुआ प्याज़ पूरी सब्ज़ी कड़वी कर देता है।"
+   },
+   "fix": {
+    "en": "Lower the heat, sprinkle water and scrape the pan. Remove dark bits and add a pinch of sugar.",
+    "hi": "आँच कम करें, पानी छिड़कें और कड़ाही खुरचें। काले टुकड़े निकालें और एक चुटकी चीनी डालें।"
+   }
   }
  },
  {
@@ -77,6 +132,17 @@
   "household": {
    "size": 5,
    "unit": "tsp"
+  },
+  "group": "fresh",
+  "care": {
+   "caution": {
+    "en": "Tastes raw if under-cooked and burns fast.",
+    "hi": "कम पकाने पर कच्चा लगता है और जल्दी जलता है।"
+   },
+   "fix": {
+    "en": "Cook 1 minute on medium before adding liquid. If it catches, sprinkle water at once.",
+    "hi": "तरल डालने से पहले मध्यम आँच पर 1 मिनट पकाएँ। चिपके तो तुरंत पानी छिड़कें।"
+   }
   }
  },
  {
@@ -88,7 +154,18 @@
    "size": 2.5,
    "unit": "tsp"
   },
-  "staple": true
+  "staple": true,
+  "group": "cabinet",
+  "care": {
+   "caution": {
+    "en": "Long cooking makes it bitter.",
+    "hi": "देर तक पकाने पर कड़वा हो जाता है।"
+   },
+   "fix": {
+    "en": "Add near the end. If bitter, balance with a pinch of sugar or a spoon of curd.",
+    "hi": "आख़िर में डालें। कड़वा लगे तो एक चुटकी चीनी या एक चम्मच दही मिलाएँ।"
+   }
+  }
  },
  {
   "id": "oil",
@@ -103,7 +180,8 @@
    "en": "Any cooking oil works: sunflower, groundnut, rice bran, refined or mustard",
    "hi": "कोई भी खाने का तेल चलेगा: सनफ्लावर, मूंगफली, राइस ब्रान, रिफाइंड या सरसों"
   },
-  "staple": true
+  "staple": true,
+  "group": "cabinet"
  },
  {
   "id": "slt",
@@ -118,7 +196,18 @@
    "en": "Any salt works: iodised table salt, rock salt (sendha) or sea salt",
    "hi": "कोई भी नमक चलेगा: आयोडीन नमक, सेंधा नमक या समुद्री नमक"
   },
-  "staple": true
+  "staple": true,
+  "group": "cabinet",
+  "care": {
+   "caution": {
+    "en": "Easy to over-salt.",
+    "hi": "नमक ज़्यादा होना आसान है।"
+   },
+   "fix": {
+    "en": "Add water or plain curd, or stretch the dish with boiled potato or more rice.",
+    "hi": "पानी या सादा दही डालें, या उबला आलू या और चावल मिलाकर मात्रा बढ़ाएँ।"
+   }
+  }
  },
  {
   "id": "cur",
@@ -136,6 +225,17 @@
   "sub": {
    "en": "Buttermilk",
    "hi": "छाछ"
+  },
+  "group": "fresh",
+  "care": {
+   "caution": {
+    "en": "Splits on high heat.",
+    "hi": "तेज़ आँच पर फट जाता है।"
+   },
+   "fix": {
+    "en": "Whisk smooth first and add on low heat. If split, blend it smooth.",
+    "hi": "पहले चिकना फेंटें और धीमी आँच पर डालें। फट जाए तो ब्लेंड कर लें।"
+   }
   }
  },
  {
@@ -150,6 +250,17 @@
   "sub": {
    "en": "Skip it",
    "hi": "छोड़ दें"
+  },
+  "group": "cabinet",
+  "care": {
+   "caution": {
+    "en": "Burns fast and turns bitter.",
+    "hi": "जल्दी जलती है और कड़वी हो जाती है।"
+   },
+   "fix": {
+    "en": "Crush it between palms and add at the end. If bitter, add a spoon of cream or butter.",
+    "hi": "हथेलियों में मसलकर आख़िर में डालें। कड़वी लगे तो एक चम्मच क्रीम या मक्खन डालें।"
+   }
   }
  },
  {
@@ -164,6 +275,17 @@
   "note": {
    "en": "Any raw rice: sona masoori, ponni or regular (idli rice also works for dosa)",
    "hi": "कोई भी कच्चा चावल: सोना मसूरी, पोन्नी या सामान्य (डोसा के लिए इडली चावल भी)"
+  },
+  "group": "cabinet",
+  "care": {
+   "caution": {
+    "en": "Turns mushy if overcooked or not rinsed.",
+    "hi": "ज़्यादा पकने या बिना धोए पकाने पर लिजलिजा हो जाता है।"
+   },
+   "fix": {
+    "en": "Rinse well before cooking. If mushy, spread on a plate to steam off and make khichdi or fried rice.",
+    "hi": "पकाने से पहले अच्छे से धोएँ। लिजलिजा हो जाए तो थाली में फैलाकर भाप निकालें और खिचड़ी या फ्राइड राइस बनाएँ।"
+   }
   }
  },
  {
@@ -174,7 +296,8 @@
   "household": {
    "size": 160,
    "unit": "katori"
-  }
+  },
+  "group": "cabinet"
  },
  {
   "id": "pot",
@@ -188,6 +311,17 @@
   "note": {
    "en": "Any all-purpose potato",
    "hi": "कोई भी आम आलू"
+  },
+  "group": "fresh",
+  "care": {
+   "caution": {
+    "en": "Do not use green or sprouting potatoes.",
+    "hi": "हरे या अंकुर वाले आलू न लें।"
+   },
+   "fix": {
+    "en": "Cut away small sprouts. If the skin is green, replace the potato.",
+    "hi": "छोटे अंकुर काट दें। छिलका हरा हो तो आलू बदल दें।"
+   }
   }
  },
  {
@@ -199,7 +333,18 @@
    "size": 4,
    "unit": "tsp"
   },
-  "staple": true
+  "staple": true,
+  "group": "cabinet",
+  "care": {
+   "caution": {
+    "en": "Burns in seconds and turns bitter.",
+    "hi": "कुछ ही सेकंड में जलकर कड़वी हो जाती है।"
+   },
+   "fix": {
+    "en": "Add curry leaves the moment they pop. If burnt, wipe the pan and restart.",
+    "hi": "चटकते ही कड़ी पत्ता डालें। जल जाए तो कड़ाही पोंछकर दोबारा शुरू करें।"
+   }
+  }
  },
  {
   "id": "cl",
@@ -209,6 +354,17 @@
   "sub": {
    "en": "Bay leaf",
    "hi": "तेज पत्ता"
+  },
+  "group": "fresh",
+  "care": {
+   "caution": {
+    "en": "Splutters hard in hot oil.",
+    "hi": "गरम तेल में बहुत छिटकता है।"
+   },
+   "fix": {
+    "en": "Dry the leaves first and add them with the lid in hand.",
+    "hi": "पहले पत्ते सुखा लें और ढक्कन हाथ में रखकर डालें।"
+   }
   }
  },
  {
@@ -219,6 +375,17 @@
   "household": {
    "size": 5,
    "unit": "pc"
+  },
+  "group": "fresh",
+  "care": {
+   "caution": {
+    "en": "Heat varies a lot from chilli to chilli.",
+    "hi": "हर मिर्च का तीखापन अलग होता है।"
+   },
+   "fix": {
+    "en": "If too hot, add curd, cream or a pinch of sugar.",
+    "hi": "ज़्यादा तीखा हो तो दही, क्रीम या एक चुटकी चीनी डालें।"
+   }
   }
  },
  {
@@ -233,7 +400,8 @@
   "sub": {
    "en": "Mint",
    "hi": "पुदीना"
-  }
+  },
+  "group": "fresh"
  },
  {
   "id": "trm",
@@ -244,7 +412,18 @@
    "size": 3,
    "unit": "tsp"
   },
-  "staple": true
+  "staple": true,
+  "group": "cabinet",
+  "care": {
+   "caution": {
+    "en": "Tastes raw if not cooked in liquid or oil.",
+    "hi": "तेल या पानी में न पकाने पर कच्चा लगता है।"
+   },
+   "fix": {
+    "en": "Cook it 30 seconds on low heat in oil, then add liquid.",
+    "hi": "धीमी आँच पर तेल में 30 सेकंड भूनें, फिर तरल डालें।"
+   }
+  }
  },
  {
   "id": "tur",
@@ -258,6 +437,17 @@
   "note": {
    "en": "Any toor (arhar) dal",
    "hi": "कोई भी तूर (अरहर) दाल"
+  },
+  "group": "cabinet",
+  "care": {
+   "caution": {
+    "en": "Stays hard if under-cooked.",
+    "hi": "कम पकाने पर सख़्त रह जाती है।"
+   },
+   "fix": {
+    "en": "Soak 30 minutes. If still hard, pressure-cook 2 to 3 more whistles with extra water.",
+    "hi": "30 मिनट भिगोएँ। सख़्त रहे तो थोड़ा पानी डालकर 2-3 सीटी और लगाएँ।"
+   }
   }
  },
  {
@@ -268,7 +458,8 @@
   "household": {
    "size": 100,
    "unit": "katori"
-  }
+  },
+  "group": "fresh"
  },
  {
   "id": "tam",
@@ -282,6 +473,17 @@
   "sub": {
    "en": "Amchur",
    "hi": "अमचूर"
+  },
+  "group": "cabinet",
+  "care": {
+   "caution": {
+    "en": "Too much makes the dish sour.",
+    "hi": "ज़्यादा डालने पर सब्ज़ी खट्टी हो जाती है।"
+   },
+   "fix": {
+    "en": "Add a pinch of jaggery or sugar and a little water.",
+    "hi": "एक चुटकी गुड़ या चीनी और थोड़ा पानी डालें।"
+   }
   }
  },
  {
@@ -296,7 +498,8 @@
   "sub": {
    "en": "Sambar powder",
    "hi": "सांभर पाउडर"
-  }
+  },
+  "group": "cabinet"
  },
  {
   "id": "chn",
@@ -306,6 +509,17 @@
   "household": {
    "size": 160,
    "unit": "katori"
+  },
+  "group": "cabinet",
+  "care": {
+   "caution": {
+    "en": "Stays hard if not soaked.",
+    "hi": "बिना भिगोए सख़्त रह जाते हैं।"
+   },
+   "fix": {
+    "en": "Soak overnight. If still hard, pressure-cook 3 to 4 more whistles.",
+    "hi": "रात भर भिगोएँ। फिर भी सख़्त रहें तो 3-4 सीटी और लगाएँ।"
+   }
   }
  },
  {
@@ -316,6 +530,17 @@
   "household": {
    "size": 125,
    "unit": "katori"
+  },
+  "group": "cabinet",
+  "care": {
+   "caution": {
+    "en": "Dough that is not rested gives hard bhature.",
+    "hi": "बिना आराम दिया गया आटा सख़्त भटूरे देता है।"
+   },
+   "fix": {
+    "en": "Rest the dough covered for 20 to 30 minutes and knead in a little oil or curd.",
+    "hi": "आटे को ढककर 20-30 मिनट रखें और थोड़ा तेल या दही गूँथकर मिलाएँ।"
+   }
   }
  },
  {
@@ -330,7 +555,8 @@
   "sub": {
    "en": "Garam masala",
    "hi": "गरम मसाला"
-  }
+  },
+  "group": "cabinet"
  },
  {
   "id": "bes",
@@ -340,6 +566,17 @@
   "household": {
    "size": 100,
    "unit": "katori"
+  },
+  "group": "cabinet",
+  "care": {
+   "caution": {
+    "en": "Lumpy batter gives uneven dhokla.",
+    "hi": "गुठलीदार घोल से ढोकला बराबर नहीं बनता।"
+   },
+   "fix": {
+    "en": "Whisk well or sieve the batter before adding Eno.",
+    "hi": "इनो डालने से पहले घोल को अच्छे से फेंटें या छान लें।"
+   }
   }
  },
  {
@@ -350,7 +587,8 @@
   "household": {
    "size": 150,
    "unit": "katori"
-  }
+  },
+  "group": "cabinet"
  },
  {
   "id": "eno",
@@ -360,13 +598,35 @@
   "sub": {
    "en": "Baking soda",
    "hi": "बेकिंग सोडा"
+  },
+  "group": "cabinet",
+  "care": {
+   "caution": {
+    "en": "Too much gives a soda taste. An old sachet will not rise.",
+    "hi": "ज़्यादा डालने पर सोडे का स्वाद आता है। पुराना सैशे फूलता नहीं।"
+   },
+   "fix": {
+    "en": "Add just before steaming and fold gently. If flat, steam anyway and serve as a crumbled snack.",
+    "hi": "भाप में रखने से ठीक पहले डालें और हल्के से मिलाएँ। न फूले तो भी भाप दें और चूरा करके नमकीन की तरह परोसें।"
+   }
   }
  },
  {
   "id": "lem",
   "en": "Lemon",
   "hi": "नींबू",
-  "unit": "pc"
+  "unit": "pc",
+  "group": "fresh",
+  "care": {
+   "caution": {
+    "en": "Cooking it makes the dish bitter.",
+    "hi": "पकाने पर सब्ज़ी कड़वी हो जाती है।"
+   },
+   "fix": {
+    "en": "Squeeze it at the end, off the heat.",
+    "hi": "आँच बंद करके आख़िर में निचोड़ें।"
+   }
+  }
  },
  {
   "id": "raj",
@@ -376,6 +636,17 @@
   "household": {
    "size": 160,
    "unit": "katori"
+  },
+  "group": "cabinet",
+  "care": {
+   "caution": {
+    "en": "Stays hard if not soaked.",
+    "hi": "बिना भिगोए सख़्त रहता है।"
+   },
+   "fix": {
+    "en": "Soak overnight. If still firm, pressure-cook longer until it mashes easily.",
+    "hi": "रात भर भिगोएँ। फिर भी सख़्त रहे तो तब तक कुकर में पकाएँ जब तक आसानी से मसला न जाए।"
+   }
   }
  },
  {
@@ -394,6 +665,17 @@
   "sub": {
    "en": "Rice",
    "hi": "चावल"
+  },
+  "group": "cabinet",
+  "care": {
+   "caution": {
+    "en": "Breaks and turns sticky if stirred or overcooked.",
+    "hi": "ज़्यादा हिलाने या पकाने पर टूटकर चिपचिपा हो जाता है।"
+   },
+   "fix": {
+    "en": "Spread it on a plate to cool. Serve as pulao or fried rice.",
+    "hi": "थाली में फैलाकर ठंडा करें। पुलाव या फ्राइड राइस की तरह परोसें।"
+   }
   }
  },
  {
@@ -404,6 +686,17 @@
   "household": {
    "size": 60,
    "unit": "katori"
+  },
+  "group": "cabinet",
+  "care": {
+   "caution": {
+    "en": "Turns soggy if soaked too long.",
+    "hi": "ज़्यादा देर भिगोने पर लिजलिजा हो जाता है।"
+   },
+   "fix": {
+    "en": "Rinse quickly. If soggy, dry-roast a minute on low heat.",
+    "hi": "जल्दी से धोएँ। लिजलिजा हो जाए तो धीमी आँच पर एक मिनट सूखा भून लें।"
+   }
   }
  },
  {
@@ -414,7 +707,8 @@
   "household": {
    "size": 10,
    "unit": "tbsp"
-  }
+  },
+  "group": "cabinet"
  },
  {
   "id": "mng",
@@ -424,7 +718,8 @@
   "household": {
    "size": 160,
    "unit": "katori"
-  }
+  },
+  "group": "cabinet"
  },
  {
   "id": "ghe",
@@ -434,7 +729,8 @@
   "household": {
    "size": 14,
    "unit": "tbsp"
-  }
+  },
+  "group": "cabinet"
  },
  {
   "id": "jer",
@@ -445,13 +741,25 @@
    "size": 2,
    "unit": "tsp"
   },
-  "staple": true
+  "staple": true,
+  "group": "cabinet",
+  "care": {
+   "caution": {
+    "en": "Burns quickly and turns bitter.",
+    "hi": "जल्दी जलकर कड़वा हो जाता है।"
+   },
+   "fix": {
+    "en": "Take the pan off the heat when they turn golden. If burnt, restart.",
+    "hi": "सुनहरा होते ही कड़ाही आँच से उतार लें। जल जाए तो दोबारा शुरू करें।"
+   }
+  }
  },
  {
   "id": "csh",
   "en": "Cashews",
   "hi": "काजू",
-  "unit": "g"
+  "unit": "g",
+  "group": "cabinet"
  },
  {
   "id": "cnt",
@@ -461,24 +769,48 @@
   "household": {
    "size": 6,
    "unit": "tbsp"
+  },
+  "group": "fresh",
+  "care": {
+   "caution": {
+    "en": "Grated coconut spoils quickly.",
+    "hi": "कसा हुआ नारियल जल्दी ख़राब हो जाता है।"
+   },
+   "fix": {
+    "en": "Use the same day. If it smells sour, discard it and use dry desiccated coconut.",
+    "hi": "उसी दिन इस्तेमाल करें। खट्टी गंध आए तो फेंक दें और सूखा नारियल पाउडर लें।"
+   }
   }
  },
  {
   "id": "drm",
   "en": "Drumstick",
   "hi": "सहजन",
-  "unit": "pc"
+  "unit": "pc",
+  "group": "fresh"
  },
  {
   "id": "pmg",
   "en": "Pomegranate",
   "hi": "अनार",
-  "unit": "g"
+  "unit": "g",
+  "group": "fresh"
  },
  {
   "id": "nan",
   "en": "Naan",
   "hi": "नान",
-  "unit": "pc"
+  "unit": "pc",
+  "group": "fresh",
+  "care": {
+   "caution": {
+    "en": "Dries out and turns chewy.",
+    "hi": "सूखकर चबड़ा हो जाता है।"
+   },
+   "fix": {
+    "en": "Sprinkle water and warm on a tawa, then wrap in foil.",
+    "hi": "पानी छिड़ककर तवे पर गरम करें, फिर फ़ॉइल में लपेट दें।"
+   }
+  }
  }
 ]
