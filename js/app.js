@@ -41,7 +41,7 @@ const total = q => buyList().reduce((a, k) => a + pk(k) * I[k][q ? 5 : 6], 0);
 const full = () => items().reduce((a, k) => a + Math.ceil(S.nd[k] / I[k][4]) * P(k), 0);
 const mc = () => buyList().reduce((a, k) => a + bu(k) * P(k) / I[k][4], 0);
 const pv = () => Math.round(mc() / Math.max(1, tm()));            /* cost per serve for this cart */
-const LNK = k => { const q = encodeURIComponent(I[k][0]); return S.qc ? `https://www.zeptonow.com/search?query=${q}` : `https://blinkit.com/s/?q=${q}`; };
+const LNK = k => { const q = encodeURIComponent(I[k][0]); return S.qc ? `https://www.zepto.com/search?query=${q}` : `https://blinkit.com/s/?q=${q}`; };
 const pq = k => P(k) ? '₹' + pk(k) * P(k) : '—';
 /* plate cost on screens 1 and 2: must-haves only, staples at home, Zepto price */
 const dc = id => Math.round(dd(id).items.reduce((a, x) => x.optional || STP.includes(x.id) ? a : a + x.qty * I[x.id][5] / I[x.id][4], 0));
