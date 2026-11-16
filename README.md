@@ -61,7 +61,7 @@ Pack size and price must be for the same pack. If you change a pack from 500 g t
 
 ## Pantry memory
 
-On the shopping list, **I have bought these: save leftovers** remembers what is left of each bought pack. The next plan starts with those items ticked on Screen 4, and the user can untick anything. Fresh items are forgotten after 3 days, cabinet items are kept. It is stored in the browser only (`pt` in local storage), and **Clear remembered items** wipes it.
+Every shopping list is kept as a pending shop. When the user taps **I have bought these: save leftovers** on the list, or answers **Yes** to "Did you buy your last list?" on the next visit, the app remembers what is left of each bought pack. **No** drops the list without remembering anything. It is once per shopping list, not once per dish. The next plan starts with those items ticked on Screen 4, and the user can untick anything. Fresh items are forgotten after 3 days, cabinet items are kept. It is stored in the browser only (`pt` in local storage), and **Clear remembered items** wipes it.
 
 The app also keeps a local list of plan times (`lg`). Type `STATS()` in the browser console to see plans made and plans started within 7 days of the first. This never leaves the device, so measuring "plan again within 7 days" across testers needs a privacy-friendly counter (for example GoatCounter) or asking testers directly.
 
