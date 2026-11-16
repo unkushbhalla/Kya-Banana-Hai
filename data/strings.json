@@ -320,8 +320,8 @@
     "जो बचेगा उसे याद रखें"
   ],
   "ptd": [
-    "After you shop, save the leftovers. Your next plan starts with them ticked. Fresh items are forgotten after 3 days.",
-    "ख़रीदारी के बाद बचा सामान सेव करें। अगला प्लान उन पर टिक के साथ शुरू होगा। ताज़ा सामान 3 दिन बाद भुला दिया जाता है।"
+    "Tap this once per shopping list, after you buy. Your next plan starts with the leftovers ticked. Fresh items are forgotten after 3 days.",
+    "हर ख़रीदारी की लिस्ट के लिए एक बार, ख़रीदने के बाद दबाएँ। अगला प्लान बचे सामान पर टिक के साथ शुरू होगा। ताज़ा सामान 3 दिन बाद भुला दिया जाता है।"
   ],
   "psv": [
     "I have bought these: save leftovers",
@@ -338,5 +338,17 @@
   "ptn": [
     "Your pantry: {n} items remembered",
     "आपकी पैंट्री: {n} चीज़ें याद हैं"
+  ],
+  "pbq": [
+    "Did you buy your last list?",
+    "क्या आपने पिछली लिस्ट का सामान ख़रीद लिया?"
+  ],
+  "pby": [
+    "Yes, I bought it",
+    "हाँ, ख़रीद लिया"
+  ],
+  "pbn": [
+    "No, not yet",
+    "नहीं, अभी नहीं"
   ]
 }
