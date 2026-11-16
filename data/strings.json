@@ -334,5 +334,9 @@
   "pcl": [
     "Clear remembered items",
     "याद रखा सामान हटाएँ"
+  ],
+  "ptn": [
+    "Your pantry: {n} items remembered",
+    "आपकी पैंट्री: {n} चीज़ें याद हैं"
   ]
 }
