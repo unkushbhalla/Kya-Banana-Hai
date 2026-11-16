@@ -4,10 +4,11 @@
 
 let I = {}, D = [], HH = {}, SX = {}, CR = {}, GP = {}, U = {}, STP = [], VD = [], IMG = {}, PD = '';
 const HU = { pc: ['pc', 'नग'], tsp: ['tsp', 'छोटा चम्मच'], tbsp: ['tbsp', 'बड़ा चम्मच'], katori: ['katori (bowl)', 'कटोरी'] };
-let S = { s: 0, n: '', l: 'en', mu: 0, m: {}, dy: {}, nd: {}, ms: {}, us: {}, hm: {}, qc: 1, sheet: 0, msg: '', mo: 0, ed: {}, pf: 0, cx: {} };
+let S = { s: 0, n: '', l: 'en', mu: 0, m: {}, dy: {}, nd: {}, ms: {}, us: {}, hm: {}, pt: {}, lg: [], pq: 0, qc: 1, sheet: 0, msg: '', mo: 0, ed: {}, pf: 0, cx: {} };
 try { Object.assign(S, JSON.parse(localStorage.getItem('p2c'))); } catch (e) {}
 
 /* ---------- helpers ---------- */
+const DAY = 864e5;
 const hi = () => S.l == 'hi';
 const t = k => U[k][hi() ? 1 : 0];
 const nm = o => o.length > 6 && o[0] != o[1] ? o[hi() ? 1 : 0] + ' · ' + o[hi() ? 0 : 1] : o[hi() ? 1 : 0];
@@ -40,9 +41,10 @@ const total = q => buyList().reduce((a, k) => a + pk(k) * I[k][q ? 5 : 6], 0);
 const full = () => items().reduce((a, k) => a + Math.ceil(S.nd[k] / I[k][4]) * P(k), 0);
 const mc = () => buyList().reduce((a, k) => a + bu(k) * P(k) / I[k][4], 0);
 const pv = () => Math.round(mc() / Math.max(1, tm()));            /* cost per serve for this cart */
+const LNK = k => { const q = encodeURIComponent(I[k][0]); return S.qc ? `https://www.zeptonow.com/search?query=${q}` : `https://blinkit.com/s/?q=${q}`; };
 const pq = k => P(k) ? '₹' + pk(k) * P(k) : '—';
-/* plate cost on screens 1 and 2: must-haves only, staples at home, kirana price */
-const dc = id => Math.round(dd(id).items.reduce((a, x) => x.optional || STP.includes(x.id) ? a : a + x.qty * I[x.id][6] / I[x.id][4], 0));
+/* plate cost on screens 1 and 2: must-haves only, staples at home, Zepto price */
+const dc = id => Math.round(dd(id).items.reduce((a, x) => x.optional || STP.includes(x.id) ? a : a + x.qty * I[x.id][5] / I[x.id][4], 0));
 
 const sx = k => SX[k] ? `<div class=nt>${SX[k][hi() ? 1 : 0]}</div>` : '';
 const est2 = () => (PD ? t('upd').replace('{d}', PD) : t('estp')) + ' ' + t('est2');
@@ -89,6 +91,13 @@ function FIND() {
   });
   for (const k in S.nd) S.nd[k] = Math.ceil(S.nd[k]);
   STP.forEach(k => { if (S.nd[k]) { S.hm[k] = S.nd[k]; S.pf = 1; } });   /* pre-tick kitchen staples */
+  S.pq = 0; S.psv = 0; S.pt = S.pt || {};
+  for (const k in S.nd) {                                                /* pre-tick what the last shop left over */
+    const e = S.pt[k]; if (!e || STP.includes(k)) continue;
+    if (GP[k] != 'cabinet' && Date.now() - e[1] > 3 * DAY) continue;     /* fresh items are forgotten after 3 days */
+    const h = Math.min(S.nd[k], e[0]); if (h > 0) { S.hm[k] = h; S.pq++; }
+  }
+  S.lg = (S.lg || []).concat(Date.now()).slice(-60);                       /* local plan log, never sent anywhere */
   G(2);
 }
 function AD() { const k = $('ad').value; if (k) { S.nd[k] = I[k][4]; S.ms[k] = 1; R(); } }
@@ -117,7 +126,7 @@ function HM() {
     return `<div class="rw ${bu(k) ? '' : 'off'} ${cb ? 'cb' : ''}"><input type=checkbox id=c_${k} ${bu(k) == 0 ? 'checked' : ''} onchange="HC('${k}',this.checked)" style="width:${sz}px;height:${sz}px;flex:none"><div class=fl><label for=c_${k} style="cursor:pointer;display:block"><b>${nm(I[k])}</b>${sx(k)}${!e && h > 0 && bu(k) > 0 ? `<div class=nt>${t('ah')}: ${hq[0]}</div>` : ''}</label>${cw(k)}</div>${e ? `<div style="text-align:right"><div class=nt>${t('need')}: ${q[0]}</div><div class=ct style="margin:4px 0;justify-content:flex-end"><button onclick="HS('${k}',-1)">−</button><span style="min-width:70px;text-align:center">${hq[0]}</span><button onclick="HS('${k}',1)">+</button></div><button class=lk onclick="ED('${k}')">${t('dn')}</button></div>` : `<div style="text-align:right"><div>${q[0]}</div><div class=nt>${q[1]}</div><button class=lk style="font-size:13px" onclick="ED('${k}')">${t('ed')}</button></div>`}</div>`;
   };
   const fz = ks.filter(k => GP[k] != 'cabinet'), cb = ks.filter(k => GP[k] == 'cabinet');
-  return `<h2>${t('home')}</h2>${S.pf ? `<div class=pn>${t('pre')}</div>` : ''}${fz.length ? `<h3 class=sec>${t('fresh')}</h3>${fz.map(k => row(k, 0)).join('')}` : ''}${cb.length ? `<h3 class="sec cab">${t('cab')}</h3><div class=nt>${t('cabn')}</div><div class=cabs>${cb.map(k => row(k, 1)).join('')}</div>` : ''}<div class=st style="position:static;margin:12px 0">${t('nb')}: ${buyList().length} / ${ks.length}</div><button class=pb onclick="G(4)">${t('fin')}</button>`;
+  return `<h2>${t('home')}</h2>${S.pf ? `<div class=pn>${t('pre')}</div>` : ''}${S.pq ? `<div class=pn>${t('pnb').replace('{n}', S.pq)}</div>` : ''}${fz.length ? `<h3 class=sec>${t('fresh')}</h3>${fz.map(k => row(k, 0)).join('')}` : ''}${cb.length ? `<h3 class="sec cab">${t('cab')}</h3><div class=nt>${t('cabn')}</div><div class=cabs>${cb.map(k => row(k, 1)).join('')}</div>` : ''}<div class=st style="position:static;margin:12px 0">${t('nb')}: ${buyList().length} / ${ks.length}</div><button class=pb onclick="G(4)">${t('fin')}</button>`;
 }
 
 /* ---------- screen 5: shopping list ---------- */
@@ -126,11 +135,23 @@ const ol = () => { const b = buyList().length; if (!b) return ''; const p = tota
 function FN() {
   if (tm()) { S.lp = { m: { ...S.m }, dy: { ...S.dy }, mu: S.mu }; try { localStorage.setItem('p2c', JSON.stringify(S)); } catch (e) {} }
   const b = buyList();
-  return `<div id=pr><h2>${t('lst')}</h2>${chips()}${ol()}${b.length ? b.map(k => `<div class=rw><div class=fl><b>${nm(I[k])}</b><div class=nt>${t('need')} ${fh(k, bu(k))} · ${t('buy')} ${pk(k)} × ${fq(k, I[k][4])}</div>${sx(k)}${I[k][7] ? `<div class=nt>${t('sub')}: ${nm(I[k].slice(7))}</div>` : ''}</div><b>${pq(k)}</b></div>`).join('') : `<p>${t('em')}</p>`}<div class=tot><div style="font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.9;margin-bottom:6px">${t('cmp')}</div><div class=tg><button class="pill ${S.qc ? 'on' : ''}" onclick="S.qc=1;R()">${t('qc')}</button><button class="pill ${S.qc ? '' : 'on'}" onclick="S.qc=0;R()">${t('ki')}</button></div>${t('tot')}<div class=big>₹${total(S.qc)}</div><div class=sg><div><b>₹${pv()}</b><span>${t('ps')}</span></div><div><b>₹${full() - total(S.qc)}</b><span>${t('sv')}</span></div><div><b>₹${total(S.qc) - Math.round(mc())}</b><span>${t('lo')}</span></div></div><details style="margin-top:8px"><summary>${t('br')}</summary><table><tr><th></th><th>${t('buy')}</th><th>${t('qc')}</th><th>${t('ki')}</th></tr>${b.map(k => `<tr><td>${nm(I[k])}</td><td>${pk(k)} × ${fq(k, I[k][4])}</td><td>₹${pk(k) * I[k][5]}</td><td>₹${pk(k) * I[k][6]}</td></tr>`).join('')}<tr><td><b>${t('tot')}</b></td><td></td><td><b>₹${total(1)}</b></td><td><b>₹${total(0)}</b></td></tr></table></details></div><div class=nt>${est2()}</div></div><button class=lk onclick="RS()">${t('pa')}</button><button class=pb onclick="S.sheet=1;R()">${t('sh')}</button>${S.sheet ? `<div class=sh onclick="S.sheet=0;R()"><div onclick="event.stopPropagation()"><button onclick="WA()">${t('wa')}</button><button onclick="CP()">${S.msg || t('cp')}</button><button onclick="PRT()">${S.pm || t('pr')}</button></div></div>` : ''}`;
+  return `<div id=pr><h2>${t('lst')}</h2>${chips()}${ol()}${b.length ? b.map(k => `<div class=rw><div class=fl><b>${nm(I[k])}</b><div class=nt>${t('need')} ${fh(k, bu(k))} · ${t('buy')} ${pk(k)} × ${fq(k, I[k][4])}</div>${sx(k)}${I[k][7] ? `<div class=nt>${t('sub')}: ${nm(I[k].slice(7))}</div>` : ''}</div><div style="text-align:right"><b>${pq(k)}</b><div><a class=lk style="font-size:13px" href="${LNK(k)}" target=_blank rel=noopener>${t('opn').replace('{p}', t(S.qc ? 'qc' : 'ki'))} ↗</a></div></div></div>`).join('') : `<p>${t('em')}</p>`}<div class=tot><div style="font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.9;margin-bottom:6px">${t('cmp')}</div><div class=tg><button class="pill ${S.qc ? 'on' : ''}" onclick="S.qc=1;R()">${t('qc')}</button><button class="pill ${S.qc ? '' : 'on'}" onclick="S.qc=0;R()">${t('ki')}</button></div>${t('tot')}<div class=big>₹${total(S.qc)}</div><div class=sg><div><b>₹${pv()}</b><span>${t('ps')}</span></div><div><b>₹${full() - total(S.qc)}</b><span>${t('sv')}</span></div><div><b>₹${total(S.qc) - Math.round(mc())}</b><span>${t('lo')}</span></div></div><details style="margin-top:8px"><summary>${t('br')}</summary><table><tr><th></th><th>${t('buy')}</th><th>${t('qc')}</th><th>${t('ki')}</th></tr>${b.map(k => `<tr><td>${nm(I[k])}</td><td>${pk(k)} × ${fq(k, I[k][4])}</td><td>₹${pk(k) * I[k][5]}</td><td>₹${pk(k) * I[k][6]}</td></tr>`).join('')}<tr><td><b>${t('tot')}</b></td><td></td><td><b>₹${total(1)}</b></td><td><b>₹${total(0)}</b></td></tr></table></details></div><div class=nt>${est2()}</div></div><div class=pn style="margin-top:12px"><b>${t('ptt')}</b><div class=nt>${t('ptd')}</div>${S.psv ? `<div class=nt style="color:var(--pr);font-weight:700">${t('psd').replace('{n}', S.psv)}</div>` : ''}${S.psv ? '' : `<button class=pb style="margin-top:8px" onclick="PS()">${t('psv')}</button>`}${Object.keys(S.pt || {}).length ? `<button class=lk onclick="PC()">${t('pcl')}</button>` : ''}</div><button class=lk onclick="RS()">${t('pa')}</button><button class=pb onclick="S.sheet=1;R()">${t('sh')}</button>${S.sheet ? `<div class=sh onclick="S.sheet=0;R()"><div onclick="event.stopPropagation()"><button onclick="WA()">${t('wa')}</button><button onclick="CP()">${S.msg || t('cp')}</button><button onclick="PRT()">${S.pm || t('pr')}</button></div></div>` : ''}`;
 }
 function TX() { return `${t('lst')} (${Object.keys(S.m).map(i => nm(dd(i).n) + ' ×' + S.m[i]).join(', ')})\n` + buyList().map(k => `• ${nm(I[k])}: ${pk(k)} × ${fq(k, I[k][4])} = ₹${pk(k) * P(k)}`).join('\n') + `\n${t('tot')} (${t(S.qc ? 'qc' : 'ki')}): ₹${total(S.qc)}`; }
 function CP() { try { navigator.clipboard.writeText(TX()); } catch (e) {} S.msg = t('ok'); R(); setTimeout(() => { S.msg = ''; R(); }, 1500); }
 function WA() { window.open('https://wa.me/?text=' + encodeURIComponent(TX()), '_blank'); }
+/* pantry memory: after a shop, leftovers of each bought pack are remembered for the next plan */
+function PS() {
+  S.pt = S.pt || {}; const now = Date.now();
+  items().forEach(k => {
+    const home = Math.max(0, ((S.pt[k] || [0])[0]) - (S.hm[k] || 0)), left = home + pk(k) * I[k][4] - bu(k);
+    if (left > 0) S.pt[k] = [Math.round(left * 10) / 10, now]; else delete S.pt[k];
+  });
+  S.psv = Object.keys(S.pt).length; R();
+}
+function PC() { S.pt = {}; S.psv = 0; R(); }
+/* local only: plans made, and plans started again within 7 days of the first */
+function STATS() { const l = S.lg || []; return { plans: l.length, again7d: l.filter(x => x > l[0] && x - l[0] <= 7 * DAY).length }; }
 function RS() { S.m = {}; S.nd = {}; S.hm = {}; S.us = {}; S.ms = {}; S.dy = {}; G(1); }
 function PRT() {
   const b = buyList(), h = `<html><head><meta charset=utf-8><title>${t('lst')}</title><style>body{font:16px system-ui,sans-serif;padding:24px}table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #999;padding:6px;text-align:left}</style></head><body><h2>${t('lst')}</h2><p>${Object.keys(S.m).map(i => nm(dd(i).n) + ' ×' + S.m[i]).join(', ')}</p><table>${b.map(k => `<tr><td>${nm(I[k])}</td><td>${pk(k)} × ${fq(k, I[k][4])}</td><td>${pq(k)}</td></tr>`).join('')}<tr><th colspan=2>${t('tot')} (${t(S.qc ? 'qc' : 'ki')})</th><th>₹${total(S.qc)}</th></tr></table></body></html>`;
@@ -147,7 +168,7 @@ function NR() {
   if (S.s == 2) { const m = items().filter(k => S.ms[k]); return `आपके भोजन के लिए कुल ${items().length} सामान चाहिए, जिनमें ${m.length} ज़रूरी हैं। मुख्य सामान हैं ${jn(m.slice(0, 5).map(H))}। आगे बढ़कर बताइए कि घर में क्या पहले से है।`; }
   if (S.s == 3) return `${items().length} में से अभी ${b.length} सामान ख़रीदने बाकी हैं। जो घर में है उस पर टिक लगाइए, या बदलें दबाकर कम मात्रा चुनिए।`;
   const sb = b.find(k => I[k][7]);
-  return b.length ? `आपको ${b.length} चीज़ें ख़रीदनी हैं: ${jn(b.slice(0, 6).map(H))}${b.length > 6 ? ' वगैरह' : ''}। ज़ेप्टो, ब्लिंकिट या स्विगी पर कुल लगभग ${total(1)} रुपये लगेंगे, और किराना दुकान पर लगभग ${total(0)} रुपये। घर के सामान से आपने लगभग ${full() - total(S.qc)} रुपये बचाए। एक थाली का ख़र्च लगभग ${pv()} रुपये है।${sb ? ` और अगर ${H(sb)} न मिले, तो ${I[sb][8]} ले सकते हैं।` : ''}` : 'आपके पास सब कुछ घर में है। कुछ ख़रीदने की ज़रूरत नहीं।';
+  return b.length ? `आपको ${b.length} चीज़ें ख़रीदनी हैं: ${jn(b.slice(0, 6).map(H))}${b.length > 6 ? ' वगैरह' : ''}। ज़ेप्टो पर कुल लगभग ${total(1)} रुपये लगेंगे, और ब्लिंकिट पर लगभग ${total(0)} रुपये। घर के सामान से आपने लगभग ${full() - total(S.qc)} रुपये बचाए। एक थाली का ख़र्च लगभग ${pv()} रुपये है।${sb ? ` और अगर ${H(sb)} न मिले, तो ${I[sb][8]} ले सकते हैं।` : ''}` : 'आपके पास सब कुछ घर में है। कुछ ख़रीदने की ज़रूरत नहीं।';
 }
 function NE() {
   const H = k => I[k][0], jn = a => a.length > 1 ? a.slice(0, -1).join(', ') + ' and ' + a[a.length - 1] : a[0] || '', ids = Object.keys(S.m), b = buyList();
@@ -156,7 +177,7 @@ function NE() {
   if (S.s == 2) { const m = items().filter(k => S.ms[k]); return `Your meals need ${items().length} items, ${m.length} of them must-haves. The main ones are ${jn(m.slice(0, 5).map(H))}. Next, tell us what you already have at home.`; }
   if (S.s == 3) return `Out of ${items().length} items, ${b.length} are left to buy. Tick what you have at home, or press edit to enter a smaller amount.`;
   const sb = b.find(k => I[k][7]);
-  return b.length ? `You need to buy ${b.length} items: ${jn(b.slice(0, 6).map(H))}${b.length > 6 ? ' and more' : ''}. The total is about ${total(1)} rupees on Zepto, Blinkit or Swiggy, and about ${total(0)} rupees at a kirana shop. One serve costs you about ${pv()} rupees, and you save about ${full() - total(S.qc)} rupees by using what’s at home.${sb ? ` If ${H(sb)} isn’t available, you can use ${I[sb][7]}.` : ''}` : 'You have everything at home. Nothing to buy.';
+  return b.length ? `You need to buy ${b.length} items: ${jn(b.slice(0, 6).map(H))}${b.length > 6 ? ' and more' : ''}. The total is about ${total(1)} rupees on Zepto, and about ${total(0)} rupees on Blinkit. One serve costs you about ${pv()} rupees, and you save about ${full() - total(S.qc)} rupees by using what’s at home.${sb ? ` If ${H(sb)} isn’t available, you can use ${I[sb][7]}.` : ''}` : 'You have everything at home. Nothing to buy.';
 }
 function SP() {
   try {
@@ -174,7 +195,7 @@ async function boot() {
     U = str; PD = pr.updated || '';
     for (const x of ing) {
       const p = pr.prices[x.id];
-      I[x.id] = [x.en, x.hi, '', x.unit, p.pack, p.qc, p.kirana].concat(x.sub ? [x.sub.en, x.sub.hi] : []);
+      I[x.id] = [x.en, x.hi, '', x.unit, p.pack, p.zepto, p.blinkit].concat(x.sub ? [x.sub.en, x.sub.hi] : []);
       if (x.household) HH[x.id] = [x.household.size, x.household.unit];
       if (x.note) SX[x.id] = [x.note.en, x.note.hi];
       if (x.staple) STP.push(x.id);
