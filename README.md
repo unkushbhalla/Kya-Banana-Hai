@@ -29,10 +29,9 @@ The app is a plain static site, so it needs no Vercel-specific services.
 
 Prices live in one file: `data/prices.json`.
 
-- Change `qc` (Zepto / Blinkit / Swiggy) and `kirana` for an ingredient. Both prices are for the same `pack` size.
+- Change `zepto` and `blinkit` for an ingredient. Both prices are for the same `pack` size: the lowest-priced standard option on each app, no brand matching.
 - Set `"updated"` to today's date, written like `26-10-2026`. The date shows on the shopping list.
-- Mark a price `qcChecked` / `kiranaChecked` as `true` once you have looked it up yourself, and `false` while it is an estimate.
-- Run `npm run validate` before committing. It catches missing prices, unknown ingredients and missing images, and lists the prices that are still estimates.
+- Run `npm run validate` before committing. It catches missing prices, unknown ingredients and missing images.
 
 Pack size and price must be for the same pack. If you change a pack from 500 g to 1 kg, change `pack` and both prices together.
 
@@ -40,7 +39,7 @@ Pack size and price must be for the same pack. If you change a pack from 500 g t
 
 | File | What it holds |
 |---|---|
-| `data/prices.json` | Pack size, quick-commerce price, kirana price, brand, checked flags. **The weekly file.** |
+| `data/prices.json` | Pack size, Zepto price, Blinkit price. **The weekly file.** |
 | `data/ingredients.json` | Names in English and Hindi, unit, household measure (katori, tsp, tbsp, pc), notes such as "any cooking oil works", substitutes, and which items count as kitchen staples. |
 | `data/dishes.json` | The eight dishes: time, heavy or light, meal slots, prep note, equipment, ingredient quantities for one serve (`optional: true` means Good to have), photo, and which three dishes show plate costs on Screen 1. |
 | `data/strings.json` | Every piece of on-screen text, as `[English, Hindi]`. |
@@ -56,13 +55,19 @@ Pack size and price must be for the same pack. If you change a pack from 500 g t
 ## How the numbers work
 
 - **To buy** = needed − at home, never below zero, rounded **up to whole packs**. Price = packs × pack price.
-- **Plate cost on Screens 1 and 2:** must-have ingredients only, minus six kitchen staples (salt, oil, turmeric, garam masala, mustard seeds, cumin), at kirana prices, counting only the amount one plate uses.
+- **Plate cost on Screens 1 and 2:** must-have ingredients only, minus six kitchen staples (salt, oil, turmeric, garam masala, mustard seeds, cumin), at Zepto prices, counting only the amount one plate uses.
 - **Per serve on Screen 5:** the amount of each bought item that one serve uses, at the chosen channel's price, for the user's own cart.
 - State (name, language, meals, ticks, last plan) is saved in the browser's local storage. Nothing leaves the device.
 
+## Pantry memory
+
+On the shopping list, **I have bought these: save leftovers** remembers what is left of each bought pack. The next plan starts with those items ticked on Screen 4, and the user can untick anything. Fresh items are forgotten after 3 days, cabinet items are kept. It is stored in the browser only (`pt` in local storage), and **Clear remembered items** wipes it.
+
+The app also keeps a local list of plan times (`lg`). Type `STATS()` in the browser console to see plans made and plans started within 7 days of the first. This never leaves the device, so measuring "plan again within 7 days" across testers needs a privacy-friendly counter (for example GoatCounter) or asking testers directly.
+
 ## Known limits
 
-- Prices are curated estimates, not live. About half of the kirana prices are estimates (see `kiranaChecked`).
+- Prices are not live. All 42 were checked on Zepto and Blinkit for pincode 110052 on 16-11-2026 and are refreshed by hand. Neither app has a public price feed. Each list item links to a search on the chosen app, not to an exact product.
 - Hindi audio uses the browser's built-in voice, so quality depends on the device.
 - "Demo login" is a front-end shortcut, not real authentication.
 - Ingredient rows have no photos (text only).
