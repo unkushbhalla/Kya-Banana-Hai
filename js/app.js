@@ -4,7 +4,7 @@
 
 let I = {}, D = [], HH = {}, SX = {}, CR = {}, GP = {}, U = {}, STP = [], VD = [], IMG = {}, PD = '';
 const HU = { pc: ['pc', 'नग'], tsp: ['tsp', 'छोटा चम्मच'], tbsp: ['tbsp', 'बड़ा चम्मच'], katori: ['katori (bowl)', 'कटोरी'] };
-let S = { s: 0, n: '', l: 'en', mu: 0, m: {}, dy: {}, nd: {}, ms: {}, us: {}, hm: {}, pt: {}, lg: [], pq: 0, qc: 1, sheet: 0, msg: '', mo: 0, ed: {}, pf: 0, cx: {} };
+let S = { s: 0, n: '', l: 'en', mu: 0, m: {}, dy: {}, nd: {}, ms: {}, us: {}, hm: {}, pt: {}, pend: null, lg: [], pq: 0, qc: 1, sheet: 0, msg: '', mo: 0, ed: {}, pf: 0, cx: {} };
 try { Object.assign(S, JSON.parse(localStorage.getItem('p2c'))); } catch (e) {}
 
 /* ---------- helpers ---------- */
@@ -56,7 +56,7 @@ function R() {
     + (S.s > 0 && S.s < 5 ? `<button class=lk onclick="G(${S.s - 1})">← ${t('bk')}</button>` : '');
   $('app').innerHTML = hd + [W, M, GR, HM, FN][S.s]();
 }
-const G = n => { S.s = n; S.sheet = 0; scrollTo(0, 0); R(); };
+const G = n => { S.s = n; S.sheet = 0; if (n == 4) SN(); scrollTo(0, 0); R(); };
 const LG = () => { S.l = hi() ? 'en' : 'hi'; R(); };
 
 /* ---------- screen 1: welcome ---------- */
@@ -72,12 +72,13 @@ function CH(id, d) { const v = (S.m[id] || 0) + d; if (d > 0 && tm() >= 6) retur
 function DY(id) { S.dy[id] = S.dy[id] == 2 ? 1 : 2; R(); }
 const lpTxt = () => Object.keys(S.lp.m).filter(i => dd(i)).map(i => nm(dd(i).n) + ' ×' + S.lp.m[i]).join(', ');
 const lpCard = () => S.lp && !tm() && lpTxt() ? `<div class=pn style="display:flex;gap:8px;align-items:center;justify-content:space-between"><span><b>${t('lp')}</b><div class=nt>${lpTxt()}</div></span><button onclick="UL()">${t('lpu')}</button></div>` : '';
+const bqCard = () => S.pend && !tm() ? `<div class=pn><b>${t('pbq')}</b><div class=nt>${S.pend.meals}</div><div style="display:flex;gap:8px;margin-top:8px"><button style="background:var(--pr);color:#fff;border:0;border-radius:12px;padding:10px 14px;font:700 15px system-ui,sans-serif;cursor:pointer" onclick="PS()">${t('pby')}</button><button class=lk onclick="PN()">${t('pbn')}</button></div></div>` : '';
 const ptLive = () => Object.keys(S.pt || {}).filter(k => I[k] && (GP[k] == 'cabinet' || Date.now() - S.pt[k][1] <= 3 * DAY));
 const ptCard = () => { const n = ptLive().length; return n ? `<div class=pn style="display:flex;gap:8px;align-items:center;justify-content:space-between"><span><b>${t('ptn').replace('{n}', n)}</b><div class=nt>${ptLive().slice(0, 5).map(k => nm(I[k])).join(', ')}${n > 5 ? '…' : ''}</div></span><button class=lk onclick="PC()">${t('pcl')}</button></div>` : ''; };
 function UL() { S.mu = S.lp.mu; S.m = { ...S.lp.m }; S.dy = { ...S.lp.dy }; R(); }
 function M() {
   const ids = Object.keys(S.m);
-  return `<h2>${t('hi')}, ${esc(S.n)}</h2>${lpCard()}${ptCard()}<div class=tg><button class="pill ${S.mu ? '' : 'on'}" onclick="MU(0)">${t('one')}</button><button class="pill ${S.mu ? 'on' : ''}" onclick="MU(1)">${t('mul')}</button></div>${S.mu ? `<div class=nt>${tm()} / 6 ${t('of')}</div>` : ''}<div class=gd>${D.map(d => {
+  return `<h2>${t('hi')}, ${esc(S.n)}</h2>${bqCard()}${lpCard()}${ptCard()}<div class=tg><button class="pill ${S.mu ? '' : 'on'}" onclick="MU(0)">${t('one')}</button><button class="pill ${S.mu ? 'on' : ''}" onclick="MU(1)">${t('mul')}</button></div>${S.mu ? `<div class=nt>${tm()} / 6 ${t('of')}</div>` : ''}<div class=gd>${D.map(d => {
     const c = S.m[d.id] || 0;
     return `<div class="dc ${c ? 'sel' : ''}" onclick="PK('${d.id}')"><div class=em>${IMG[d.id] ? `<img src="${IMG[d.id]}" alt="${nm(d.n)}" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;display:block">` : ''}</div><b>${nm(d.n)}</b><div class=nt>${d.m} ${t('min')} · ≈₹${dc(d.id)}/${t('srv')}</div><div class=nt>${t(d.w ? 'hv' : 'lt')} · ${d.t.split('').map(x => t(x)).join(' / ')}</div>${S.mu && c ? `<div class=ct onclick="event.stopPropagation()"><button onclick="CH('${d.id}',-1)">−</button><b>${c}</b><button onclick="CH('${d.id}',1)">+</button><button onclick="DY('${d.id}')">${t('d')} ${S.dy[d.id] || 1}</button></div>` : ''}${c ? `<div class=pn style="text-align:left;margin:8px 0 0;font-size:12.5px;line-height:1.35" onclick="event.stopPropagation()"><b>${t('prp')}</b> ${nm(d.p)}${d.k[0] ? `<br><b>${t('eqp')}</b> ${nm(d.k)}` : ''}</div>` : ''}</div>`;
   }).join('')}</div><button class=pb ${ids.length ? '' : 'disabled'} onclick="FIND()">${t('find')}</button>`;
@@ -137,20 +138,24 @@ const ol = () => { const b = buyList().length; if (!b) return ''; const p = tota
 function FN() {
   if (tm()) { S.lp = { m: { ...S.m }, dy: { ...S.dy }, mu: S.mu }; try { localStorage.setItem('p2c', JSON.stringify(S)); } catch (e) {} }
   const b = buyList();
-  return `<div id=pr><h2>${t('lst')}</h2>${chips()}${ol()}${b.length ? b.map(k => `<div class=rw><div class=fl><b>${nm(I[k])}</b><div class=nt>${t('need')} ${fh(k, bu(k))} · ${t('buy')} ${pk(k)} × ${fq(k, I[k][4])}</div>${sx(k)}${I[k][7] ? `<div class=nt>${t('sub')}: ${nm(I[k].slice(7))}</div>` : ''}</div><div style="text-align:right"><b>${pq(k)}</b><div><a class=lk style="font-size:13px" href="${LNK(k)}" target=_blank rel=noopener>${t('opn').replace('{p}', t(S.qc ? 'qc' : 'ki'))} ↗</a></div></div></div>`).join('') : `<p>${t('em')}</p>`}<div class=tot><div style="font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.9;margin-bottom:6px">${t('cmp')}</div><div class=tg><button class="pill ${S.qc ? 'on' : ''}" onclick="S.qc=1;R()">${t('qc')}</button><button class="pill ${S.qc ? '' : 'on'}" onclick="S.qc=0;R()">${t('ki')}</button></div>${t('tot')}<div class=big>₹${total(S.qc)}</div><div class=sg><div><b>₹${pv()}</b><span>${t('ps')}</span></div><div><b>₹${full() - total(S.qc)}</b><span>${t('sv')}</span></div><div><b>₹${total(S.qc) - Math.round(mc())}</b><span>${t('lo')}</span></div></div><details style="margin-top:8px"><summary>${t('br')}</summary><table><tr><th></th><th>${t('buy')}</th><th>${t('qc')}</th><th>${t('ki')}</th></tr>${b.map(k => `<tr><td>${nm(I[k])}</td><td>${pk(k)} × ${fq(k, I[k][4])}</td><td>₹${pk(k) * I[k][5]}</td><td>₹${pk(k) * I[k][6]}</td></tr>`).join('')}<tr><td><b>${t('tot')}</b></td><td></td><td><b>₹${total(1)}</b></td><td><b>₹${total(0)}</b></td></tr></table></details></div><div class=nt>${est2()}</div></div><div class=pn style="margin-top:12px"><b>${t('ptt')}</b><div class=nt>${t('ptd')}</div>${S.psv ? `<div class=nt style="color:var(--pr);font-weight:700">${t('psd').replace('{n}', S.psv)}</div>` : ''}${S.psv ? '' : `<button class=pb style="margin-top:8px" onclick="PS()">${t('psv')}</button>`}${Object.keys(S.pt || {}).length ? `<button class=lk onclick="PC()">${t('pcl')}</button>` : ''}</div><button class=lk onclick="RS()">${t('pa')}</button><button class=pb onclick="S.sheet=1;R()">${t('sh')}</button>${S.sheet ? `<div class=sh onclick="S.sheet=0;R()"><div onclick="event.stopPropagation()"><button onclick="WA()">${t('wa')}</button><button onclick="CP()">${S.msg || t('cp')}</button><button onclick="PRT()">${S.pm || t('pr')}</button></div></div>` : ''}`;
+  return `<div id=pr><h2>${t('lst')}</h2>${chips()}${ol()}${b.length ? b.map(k => `<div class=rw><div class=fl><b>${nm(I[k])}</b><div class=nt>${t('need')} ${fh(k, bu(k))} · ${t('buy')} ${pk(k)} × ${fq(k, I[k][4])}</div>${sx(k)}${I[k][7] ? `<div class=nt>${t('sub')}: ${nm(I[k].slice(7))}</div>` : ''}</div><div style="text-align:right"><b>${pq(k)}</b><div><a class=lk style="font-size:13px" href="${LNK(k)}" target=_blank rel=noopener>${t('opn').replace('{p}', t(S.qc ? 'qc' : 'ki'))} ↗</a></div></div></div>`).join('') : `<p>${t('em')}</p>`}<div class=tot><div style="font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.9;margin-bottom:6px">${t('cmp')}</div><div class=tg><button class="pill ${S.qc ? 'on' : ''}" onclick="S.qc=1;R()">${t('qc')}</button><button class="pill ${S.qc ? '' : 'on'}" onclick="S.qc=0;R()">${t('ki')}</button></div>${t('tot')}<div class=big>₹${total(S.qc)}</div><div class=sg><div><b>₹${pv()}</b><span>${t('ps')}</span></div><div><b>₹${full() - total(S.qc)}</b><span>${t('sv')}</span></div><div><b>₹${total(S.qc) - Math.round(mc())}</b><span>${t('lo')}</span></div></div><details style="margin-top:8px"><summary>${t('br')}</summary><table><tr><th></th><th>${t('buy')}</th><th>${t('qc')}</th><th>${t('ki')}</th></tr>${b.map(k => `<tr><td>${nm(I[k])}</td><td>${pk(k)} × ${fq(k, I[k][4])}</td><td>₹${pk(k) * I[k][5]}</td><td>₹${pk(k) * I[k][6]}</td></tr>`).join('')}<tr><td><b>${t('tot')}</b></td><td></td><td><b>₹${total(1)}</b></td><td><b>₹${total(0)}</b></td></tr></table></details></div><div class=nt>${est2()}</div></div><div class=pn style="margin-top:12px"><b>${t('ptt')}</b><div class=nt>${t('ptd')}</div>${S.psv ? `<div class=nt style="color:var(--pr);font-weight:700">${t('psd').replace('{n}', S.psv)}</div>` : ''}${S.pend ? `<button style="background:var(--pr);color:#fff;border:0;border-radius:12px;padding:10px 14px;font:700 15px system-ui,sans-serif;cursor:pointer" onclick="PS()">${t('psv')}</button>` : ''}${Object.keys(S.pt || {}).length ? `<button class=lk onclick="PC()">${t('pcl')}</button>` : ''}</div><button class=lk onclick="RS()">${t('pa')}</button><button class=pb onclick="S.sheet=1;R()">${t('sh')}</button>${S.sheet ? `<div class=sh onclick="S.sheet=0;R()"><div onclick="event.stopPropagation()"><button onclick="WA()">${t('wa')}</button><button onclick="CP()">${S.msg || t('cp')}</button><button onclick="PRT()">${S.pm || t('pr')}</button></div></div>` : ''}`;
 }
 function TX() { return `${t('lst')} (${Object.keys(S.m).map(i => nm(dd(i).n) + ' ×' + S.m[i]).join(', ')})\n` + buyList().map(k => `• ${nm(I[k])}: ${pk(k)} × ${fq(k, I[k][4])} = ₹${pk(k) * P(k)}`).join('\n') + `\n${t('tot')} (${t(S.qc ? 'qc' : 'ki')}): ₹${total(S.qc)}`; }
 function CP() { try { navigator.clipboard.writeText(TX()); } catch (e) {} S.msg = t('ok'); R(); setTimeout(() => { S.msg = ''; R(); }, 1500); }
 function WA() { window.open('https://wa.me/?text=' + encodeURIComponent(TX()), '_blank'); }
 /* pantry memory: after a shop, leftovers of each bought pack are remembered for the next plan */
-function PS() {
-  S.pt = S.pt || {}; const now = Date.now();
-  items().forEach(k => {
-    const home = Math.max(0, ((S.pt[k] || [0])[0]) - (S.hm[k] || 0)), left = home + pk(k) * I[k][4] - bu(k);
-    if (left > 0) S.pt[k] = [Math.round(left * 10) / 10, now]; else delete S.pt[k];
-  });
-  S.psv = Object.keys(S.pt).length; R();
+/* every list is kept as a pending shop; leftovers are only remembered once the user says they bought it */
+function SN() {
+  S.pt = S.pt || {}; const left = {};
+  items().forEach(k => { left[k] = Math.round((Math.max(0, ((S.pt[k] || [0])[0]) - (S.hm[k] || 0)) + pk(k) * I[k][4] - bu(k)) * 10) / 10; });
+  S.pend = { ts: Date.now(), left, meals: Object.keys(S.m).map(i => nm(dd(i).n) + ' ×' + S.m[i]).join(', ') };
 }
+function PS() {
+  if (!S.pend) return; S.pt = S.pt || {};
+  for (const k in S.pend.left) { const q = S.pend.left[k]; if (q > 0) S.pt[k] = [q, Date.now()]; else delete S.pt[k]; }
+  S.psv = Object.keys(S.pt).length; S.pend = null; R();
+}
+function PN() { S.pend = null; R(); }
 function PC() { S.pt = {}; S.psv = 0; R(); }
 /* local only: plans made, and plans started again within 7 days of the first */
 function STATS() { const l = S.lg || []; return { plans: l.length, again7d: l.filter(x => x > l[0] && x - l[0] <= 7 * DAY).length }; }
