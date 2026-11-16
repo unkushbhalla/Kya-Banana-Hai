@@ -1,342 +1,216 @@
 {
- "updated": "26-10-2026",
- "note": "Edit this file weekly. pack = pack size in the ingredient unit; qc = Zepto/Blinkit/Swiggy price for that pack (most-reviewed brand); kirana = kirana shop price for the same pack. *Checked = false means the number is an estimate, not a looked-up price.",
+ "updated": "16-11-2026",
+ "note": "Pincode 110052. zepto and blinkit = lowest-priced standard option for that pack on each app, no brand matching. pack = pack size in the ingredient unit. Pomegranate prices are scaled to a 500 g pack (Zepto 700 g Rs 308, Blinkit 450 g Rs 151).",
  "prices": {
   "chk": {
    "pack": 500,
-   "qc": 199,
-   "kirana": 199,
-   "brand": "Godrej Real",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 199,
+   "blinkit": 180
   },
   "btr": {
    "pack": 100,
-   "qc": 64,
-   "kirana": 64,
-   "brand": "Amul Salted",
-   "qcChecked": true,
-   "kiranaChecked": true
+   "zepto": 66,
+   "blinkit": 66
   },
   "crm": {
    "pack": 250,
-   "qc": 75,
-   "kirana": 74,
-   "brand": "Amul",
-   "qcChecked": true,
-   "kiranaChecked": true
+   "zepto": 75,
+   "blinkit": 70
   },
   "tom": {
    "pack": 500,
-   "qc": 30,
-   "kirana": 30,
-   "brand": "Local",
-   "qcChecked": true,
-   "kiranaChecked": true
+   "zepto": 14,
+   "blinkit": 22
   },
   "oni": {
    "pack": 500,
-   "qc": 34,
-   "kirana": 28,
-   "brand": "",
-   "qcChecked": true,
-   "kiranaChecked": true
+   "zepto": 32,
+   "blinkit": 50
   },
   "gng": {
    "pack": 200,
-   "qc": 36,
-   "kirana": 36,
-   "brand": "Catch",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 37,
+   "blinkit": 37
   },
   "gm": {
    "pack": 100,
-   "qc": 99,
-   "kirana": 99,
-   "brand": "Catch",
-   "qcChecked": true,
-   "kiranaChecked": true
+   "zepto": 48,
+   "blinkit": 48
   },
   "oil": {
    "pack": 1000,
-   "qc": 185,
-   "kirana": 185,
-   "brand": "Fortune Soya Health Refined",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 210,
+   "blinkit": 174
   },
   "slt": {
    "pack": 1000,
-   "qc": 30,
-   "kirana": 31,
-   "brand": "Tata",
-   "qcChecked": true,
-   "kiranaChecked": true
+   "zepto": 27,
+   "blinkit": 31
   },
   "cur": {
    "pack": 380,
-   "qc": 35,
-   "kirana": 35,
-   "brand": "Mother Dairy Classic",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 35,
+   "blinkit": 50
   },
   "kas": {
    "pack": 25,
-   "qc": 11,
-   "kirana": 15,
-   "brand": "ZOFF",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 11,
+   "blinkit": 28
   },
   "rce": {
    "pack": 1000,
-   "qc": 98,
-   "kirana": 98,
-   "brand": "Daawat Rozana",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 63,
+   "blinkit": 65
   },
   "urd": {
    "pack": 500,
-   "qc": 89,
-   "kirana": 85,
-   "brand": "Daily Good",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 73,
+   "blinkit": 93
   },
   "pot": {
    "pack": 1000,
-   "qc": 22,
-   "kirana": 22,
-   "brand": "Local",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 14,
+   "blinkit": 14
   },
   "mus": {
    "pack": 200,
-   "qc": 40,
-   "kirana": 40,
-   "brand": "Daily Good",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 40,
+   "blinkit": 42
   },
   "cl": {
    "pack": 60,
-   "qc": 18,
-   "kirana": 18,
-   "brand": "Cleaned, without roots",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 11,
+   "blinkit": 26
   },
   "grn": {
    "pack": 100,
-   "qc": 25,
-   "kirana": 10,
-   "brand": "No brand",
-   "qcChecked": true,
-   "kiranaChecked": true
+   "zepto": 13,
+   "blinkit": 13
   },
   "cor": {
    "pack": 100,
-   "qc": 23,
-   "kirana": 23,
-   "brand": "Organically grown",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 30,
+   "blinkit": 31
   },
   "trm": {
    "pack": 100,
-   "qc": 36,
-   "kirana": 36,
-   "brand": "Catch",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 28,
+   "blinkit": 36
   },
   "tur": {
    "pack": 1000,
-   "qc": 174,
-   "kirana": 174,
-   "brand": "Tata Sampann",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 168,
+   "blinkit": 151
   },
   "veg": {
    "pack": 500,
-   "qc": 77,
-   "kirana": 76,
-   "brand": "Safar Frozen",
-   "qcChecked": true,
-   "kiranaChecked": true
+   "zepto": 63,
+   "blinkit": 63
   },
   "tam": {
    "pack": 200,
-   "qc": 66,
-   "kirana": 60,
-   "brand": "Daily Good",
-   "qcChecked": true,
-   "kiranaChecked": true
+   "zepto": 46,
+   "blinkit": 53
   },
   "bbp": {
    "pack": 100,
-   "qc": 89,
-   "kirana": 89,
-   "brand": "MTR",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 58,
+   "blinkit": 87
   },
   "chn": {
    "pack": 500,
-   "qc": 72,
-   "kirana": 72,
-   "brand": "Rajdhani Unpolished",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 76,
+   "blinkit": 79
   },
   "mai": {
    "pack": 500,
-   "qc": 27,
-   "kirana": 27,
-   "brand": "Daily Good",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 28,
+   "blinkit": 28
   },
   "chm": {
    "pack": 50,
-   "qc": 51,
-   "kirana": 51,
-   "brand": "Everest",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 51,
+   "blinkit": 51
   },
   "bes": {
    "pack": 500,
-   "qc": 50,
-   "kirana": 52,
-   "brand": "Rajdhani",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 40,
+   "blinkit": 63
   },
   "soo": {
    "pack": 500,
-   "qc": 40,
-   "kirana": 35,
-   "brand": "Fortune",
-   "qcChecked": true,
-   "kiranaChecked": true
+   "zepto": 28,
+   "blinkit": 33
   },
   "eno": {
    "pack": 6,
-   "qc": 60,
-   "kirana": 58,
-   "brand": "ENO",
-   "qcChecked": true,
-   "kiranaChecked": true
+   "zepto": 58,
+   "blinkit": 50
   },
   "lem": {
    "pack": 5,
-   "qc": 59,
-   "kirana": 50,
-   "brand": "Local",
-   "qcChecked": true,
-   "kiranaChecked": true
+   "zepto": 61,
+   "blinkit": 57
   },
   "raj": {
    "pack": 500,
-   "qc": 97,
-   "kirana": 96,
-   "brand": "Tata Sampann Red Rajma",
-   "qcChecked": true,
-   "kiranaChecked": true
+   "zepto": 86,
+   "blinkit": 95
   },
   "bas": {
    "pack": 1000,
-   "qc": 105,
-   "kirana": 80,
-   "brand": "Fortune Rozana Gold",
-   "qcChecked": true,
-   "kiranaChecked": true
+   "zepto": 75,
+   "blinkit": 66
   },
   "poh": {
    "pack": 500,
-   "qc": 42,
-   "kirana": 40,
-   "brand": "Daily Good",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 45,
+   "blinkit": 42
   },
   "pnt": {
    "pack": 500,
-   "qc": 105,
-   "kirana": 85,
-   "brand": "Daily Good",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 83,
+   "blinkit": 85
   },
   "mng": {
    "pack": 500,
-   "qc": 80,
-   "kirana": 80,
-   "brand": "Daily Good Unpolished",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 65,
+   "blinkit": 79
   },
   "ghe": {
    "pack": 180,
-   "qc": 185,
-   "kirana": 185,
-   "brand": "Aashirwad cow ghee",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 155,
+   "blinkit": 132
   },
   "jer": {
    "pack": 100,
-   "qc": 58,
-   "kirana": 45,
-   "brand": "Catch",
-   "qcChecked": true,
-   "kiranaChecked": true
+   "zepto": 35,
+   "blinkit": 47
   },
   "csh": {
    "pack": 100,
-   "qc": 118,
-   "kirana": 118,
-   "brand": "Daily Good",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 105,
+   "blinkit": 115
   },
   "cnt": {
    "pack": 100,
-   "qc": 60,
-   "kirana": 49,
-   "brand": "Local",
-   "qcChecked": true,
-   "kiranaChecked": true
+   "zepto": 55,
+   "blinkit": 48
   },
   "drm": {
    "pack": 3,
-   "qc": 40,
-   "kirana": 40,
-   "brand": "-",
-   "qcChecked": false,
-   "kiranaChecked": true
+   "zepto": 35,
+   "blinkit": 33
   },
   "pmg": {
    "pack": 500,
-   "qc": 120,
-   "kirana": 120,
-   "brand": "Economy",
-   "qcChecked": true,
-   "kiranaChecked": false
+   "zepto": 220,
+   "blinkit": 168
   },
   "nan": {
-   "pack": 2,
-   "qc": 50,
-   "kirana": 45,
-   "brand": "-",
-   "qcChecked": false,
-   "kiranaChecked": false
+   "pack": 5,
+   "zepto": 129,
+   "blinkit": 112
   }
  }
 }
